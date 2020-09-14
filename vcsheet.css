@@ -34,3 +34,8 @@ h5 {
   background-color: #222;
   color: #aaa;
 }
+
+#wrapped { 
+	width: 900px; 
+	margin: 0 auto; 
+}
