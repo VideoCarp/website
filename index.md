@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="vcsheet.css">
+
 # Beginner's Guide to Commands
 ##### Exclusive to Bedrock Edition
 
