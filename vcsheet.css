@@ -39,3 +39,9 @@ h5 {
 	width: 900px; 
 	margin: 0 auto; 
 }
+.cntr {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
