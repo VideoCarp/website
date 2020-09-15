@@ -56,7 +56,9 @@ a {
 }
 
 code {
-  background-color: #000000;
-  color: #fce303;
-  border-style: round;
+  border-radius: 25px;
+  background: #000000;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;
 }
