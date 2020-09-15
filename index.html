@@ -56,7 +56,7 @@
 
     <h4 id="what-is-a-block-">What is a block?</h4>
     <hr>
-    <p>A block is essentially <span="cyellow"> an object that takes up a 1x1 space </span>. An example of a block 
+    <p>A block is essentially <yellowify> an object that takes up a 1x1 space </yellowify>. An example of a block 
       would be say grass, dirt, etc.<br>
         Everything in the below image is a block, don&#39;t worry about the water just yet.<br>
         <br>
@@ -66,8 +66,8 @@
 
     <h4 id="what-is-an-entity-">What is an entity?</h4>
     <hr>
-    <p>An entity as I like to think of it is <span class="cyellow"> any object that 
-        is not fixed to it&#39;s position, and can take damage.</span><br>
+    <p>An entity as I like to think of it is <yellowify> any object that 
+        is not fixed to it&#39;s position, and can take damage.</yellowify><br>
         Water isn&#39;t fixed to it&#39;s position, is it an entity? No, the reason for 
         that is because water cannot take damage.<br>
         <strong>All mobs, but not only mobs</strong> are entities.
@@ -82,9 +82,9 @@
 
     <h3 id="what-is-a-syntax-">What is a syntax?</h3>
     <hr>
-    <p>A quick explanation I&#39;ll give about syntaxes is that they&#39;re the format of the 
-      command, if your command doesn&#39;t<br>
-        execute, then there&#39;s a chance it&#39;s that. <span class="cyellow"> Give all syntax errors a full read</span>, 
+    <p>A quick explanation I&#39;ll give about syntaxes is that they&#39;re <yellowify>the format of the 
+        command</yellowify>, if your command doesn&#39;t<br>
+        execute, then there&#39;s a chance it&#39;s that. <yellowify> Give all syntax errors a full read</yellowify>, 
       if they don&#39;t work, take reference<br>
         from either my main guide or the <code>/help &lt;command-name&gt;</code> command while in game.<br>
         An example of a syntax error is: <code>/kill @ e</code>. That specific one will be raised 
@@ -120,8 +120,8 @@
         How are coordinates formatted? Well, regarding both of them, there are three
         <a href="https://www.dictionary.com/browse/axis">axes</a>, namely X, Y, and Z.<br>
         <strong>How are they formatted?</strong><br>
-        The <span class="cyellow"> X and Y </span> axes should be clear, otherwise click on the hyperlink.<br>
-        Things start on the <span class="cyellow"> Z axis </span>, that&#39;s what different, 
+        The <yellowifu> X and Y </yellowify> axes should be clear, otherwise click on the hyperlink.<br>
+        Things start on the <yellowify> Z axis </yellowify>, that&#39;s what different, 
         it&#39;s kind of like X,
       think of it as just another X, the reason<br>
         for the existence of the Z axis is because the game is in 3D, 
@@ -135,8 +135,8 @@
         <code>Position</code>. It should look somewhat like this:
       <code>Position: X, Y, Z</code>. If it doesn&#39;t show exactly like that, don&#39;t panic.<br>
         X, Y, and Z are used to represent the number, whatever it is
-        , is where your <span class="cyellow"> legs are </span>. We&#39;ll be getting into<br>
-        <span class="cyellow">tildes </span> on the next section, they will be necessary.
+        , is where your <yellowify> legs are </yellowify>. We&#39;ll be getting into<br>
+        <yellowify>tildes </yellowify> on the next section, they will be necessary.
     </p>
 
 
@@ -152,8 +152,8 @@
         To remove from the coordinate: <code>~-&lt;number&gt;</code>. Note the <code>-</code>. 
         This goes for all axes.<br>
     </p>
-    <p>Say you want the player to teleport 10 blocks upwards, remember the <span class="cyellow">Y axis is 
-        vertical</span>.<br>
+    <p>Say you want the player to teleport 10 blocks upwards, remember the <yellowify>Y axis is 
+        vertical</yellowify>.<br>
         <code>tp &lt;target&gt; ~ ~10 ~</code>.<br>
         Now what is <code>target</code> you may ask. Target means the
         entity the command is being executed on.<br>
@@ -166,15 +166,15 @@
     <h2 id="entity-management">Entity Management</h2>
     <hr>
     <p>Well this is a bad name for the section, but this section is for managing entities.<br>
-        There are a lot of commands that can <span class="cyellow">affect entities,</span>
+        There are a lot of commands that can <yellowify>affect entities,</yellowify>
         but here I&#39;ll cover the crucial ones.<br>
     </p>
 
 
     <h3 id="deleting-an-entity">Deleting an Entity</h3>
     <hr>
-    <p>It&#39;s very easy to delete an entity, you can simply use the <span class="cyellow">
-        kill command to delete an entity</span>.<br>
+    <p>It&#39;s very easy to delete an entity, you can simply use the <yellowify>
+        kill command to delete an entity</yellowify>.<br>
         But what if you wanted to delete a dropped item, 
         or perhaps a specific mob? Below is more info.<br>
     </p>
@@ -207,8 +207,8 @@
         You see those things in the <code>[]</code> brackets? They will be covered next.<br>
     </p>
     <p><code>@e[type=&lt;entity_type&gt;</code> 
-      will <span class="cyellow">select a specific type of entity, this could be TNT, a dropped item, a<br>
-        specific mob type, etc, it can find any entity type.</span>
+      will <yellowify>select a specific type of entity, this could be TNT, a dropped item, a<br>
+        specific mob type, etc, it can find any entity type.</yellowify>
       But what if you wanted a specific entity?<br>
         <code>@e[type=&lt;entity_type&gt;,name=&lt;name&gt;</code>. With that, you&#39;ll find one of a name.<br>
         A very common issue I find others doing is when they&#39;re getting the name, they usually<br>
@@ -226,14 +226,15 @@
         <code>@e[r=&lt;range number&gt;]</code><br>
         In most guides, <code>number</code> will be 
       represented as <code>int</code> or <code>integer</code>. They both mean a number.<br>
+        In the case of a decimal, it's considered <code>float</code>.
     </p>
 
 
     <h2 id="execute">Execute</h2>
     <hr>
     <p><strong>This is an extremely important section!</strong>
-        This section is fully dedicated to making <span class="cyellow">entities
-        execute a command</span>, think of it as <code>sudo</code>, but for commands.<br>
+        This section is fully dedicated to making <yellowify>entities
+        execute a command</yellowify>, think of it as <code>sudo</code>, but for commands.<br>
         The execute command is the <strong>most powerful</strong> command in the 
         entire game, but don&#39;t worry, it isn&#39;t hard to<br>
         pick up on.
