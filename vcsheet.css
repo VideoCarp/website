@@ -54,3 +54,8 @@ a {
   color: #fce303;
   text-shadow: 2px 2px 4px #000000;
 }
+
+code {
+  background-color: #000000;
+  color: #ffffff;
+}
