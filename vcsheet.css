@@ -56,9 +56,7 @@ a {
 }
 
 code {
-  background-color: #171717; 
-  color: #fce303;
-  border: 0.5px solid;
-  padding: 1px;
-  box-shadow: 2px 2px #000000
+	background-color: #171717;
+  color: #79e336;
+	border-style: inset;
 }
