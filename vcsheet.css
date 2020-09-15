@@ -13,7 +13,7 @@ h1 {
   text-shadow: 2px 2px 4px #000000; /* Text Shadow */
 }
 
-/* Not gonna comment each header. */
+/* Not gonna comment each header, would be a waste of time. */
 
 h2 {
   background-color: #222;
@@ -53,7 +53,7 @@ a {
   text-shadow: 2px 2px 4px ##0074ad; /* Text Shadow */
 }
 
-/* Yello Text Class */
+/* Yellow Text Class */
 .cyellow {
   color: #fce303; /* Color: Yellow */
   text-shadow: 3px 3px 4px #000000; /* Text Shadow */
