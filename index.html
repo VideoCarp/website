@@ -230,18 +230,18 @@
         entire game, but don&#39;t worry, it isn&#39;t hard to<br>
         pick up on.
         <code>/execute &lt;target&gt; &lt;location&gt; &lt;selected command
-          syntax&gt;</code> is the syntax. <code>&lt;selected command syntax&gt;</code><br>
+          syntax&gt;</code> is the syntax.<br> <code>&lt;selected command syntax&gt;</code><br>
         refers to the command you&#39;re getting the entity to execute. I always
         have my location as <code>~ ~ ~</code> and when it&#39;s<br>
         like that, it executes anywhere, that&#39;s at least what I use for myself.<br>
         But what if you wanted to check if someone was on a specific block type?<br>
         <code>/execute &lt;target&gt; &lt;location&gt; detect &lt;block to
         detect&gt; &lt;data value&gt; &lt;detectPos&gt; &lt;command&gt;</code>.<br>
-        That would be your syntax. <code>detect</code> isn&#39;t in brackets, 
+        That would be your syntax.<br> <code>detect</code> isn&#39;t in brackets, 
         this means to just put it there, regardless.<br>
         Say you wanted a creeper walking on grass to kill nearby ocelots, you&#39;d use this:
         <code>mcfunction
-        /execute @e[type=creeper] ~ ~ ~ detect grass 0 ~ ~-1 ~ kill @e[type=ocelot,r=5]</code>
+        /execute @e[type=creeper] ~ ~ ~ detect grass 0 ~ ~-1 ~ kill @e[type=ocelot,r=5]</code><br>
     </p>
     <p>Now that you&#39;ve gotten this far, I believe you&#39;re ready for my other guide,
       which has a contents panel.<br>
