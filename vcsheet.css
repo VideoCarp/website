@@ -1,19 +1,15 @@
-/* Global Style */
 body {
-  background-color: #222; /* Background Color: White */
-  color: #aaa; /* Text Color: White */
-  font-family: Verdana, Geneva, sans-serif; /* Font: Geneva, Verdana: Sans Serif. */
-  text-align: left; /* Global Text Alignment */
+  background-color: #222;
+  color: #aaa;
+  font-family: Verdana, Geneva, sans-serif;
+  text-align: left;
 }
 
-/* Headers */
 h1 {
-  background-color: #222; /* Background Color: Black */
-  color: #aaa; /* Text Color: White */
-  text-shadow: 2px 2px 4px #000000; /* Text Shadow */
+  background-color: #222;
+  color: #aaa;
+  text-shadow: 2px 2px 4px #000000;
 }
-
-/* Not gonna comment each header, would be a waste of time. */
 
 h2 {
   background-color: #222;
@@ -38,8 +34,11 @@ h5 {
   color: #aaa;
 }
 
-/* Center Alignment Preset Class */
 
+#wrapped { 
+	width: 900px; 
+	margin: 0 auto; 
+}
 .cntr {
   display: block;
   margin-left: auto;
@@ -47,14 +46,11 @@ h5 {
   width: 70%;
 }
 
-/* Hyperlink */
 a {
-  color: #03a5fc; /* Text Color */
-  text-shadow: 2px 2px 4px ##0074ad; /* Text Shadow */
+  color: #03a5fc;
 }
 
-/* Yellow Text Class */
 .cyellow {
-  color: #fce303; /* Color: Yellow */
-  text-shadow: 3px 3px 4px #000000; /* Text Shadow */
+  color: #fce303;
+  text-shadow: 2px 2px 4px #000000;
 }
