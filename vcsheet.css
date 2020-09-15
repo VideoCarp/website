@@ -58,7 +58,7 @@ a {
 code {
   background-color: #171717;
   color: #79e336;
-  border-style: inset;
+  border-style: solid;
   border-width: 1px;
   border-top-color: #121212;
   border-left-color: #141414;
