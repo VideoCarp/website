@@ -56,7 +56,6 @@ a {
 }
 
 code {
-  border-radius: 6px;
-  background: #000000;
-  padding: 6px; 
+  background-color: #000000; 
+  color: #fce303;
 }
