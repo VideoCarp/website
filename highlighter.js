@@ -1,6 +1,6 @@
 /* THIS WAS COMPILED FROM PYTHON, CODE MAY BE DONE INEFFICIENTLY */
 // (still writing it rn)
-// This is just a sample script. Paste your real code (javascript or HTML)
+// This is just a sample script. Paste your real code (javascript or HTML) // btw that was for auto formatter
 var $B = __BRYTHON__;
 var _b_ = __BRYTHON__.builtins;
 var $locals = $locals___main__
