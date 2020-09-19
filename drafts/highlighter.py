@@ -39,5 +39,6 @@ for word in keyword_list:
 for number in intlist:
   ending = ending + split_input.replace(number, f"<numberify>{number}</numberify>");
 
-actually_ended = ending.replace("[", "").replace("]", "").replace("'", "").replace('"', '').replace(",", "")
+actually_ended = ending.replace("[", "").replace("]", "").replace("'", "").replace('"', '').replace(",", "");
+document.getElementById("tohighlight").innerHTML(actually_ended);
 
