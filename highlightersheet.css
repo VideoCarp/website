@@ -56,4 +56,15 @@ a {
   border-style: solid;
   border-color: #03a5fc;
 }
-  
+
+.keywordify {
+  color: #ff084a
+}
+
+.symbolify {
+  color: #fcba03;
+}
+
+.commandify {
+  color: #24d13e;
+}
