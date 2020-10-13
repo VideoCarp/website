@@ -57,14 +57,18 @@ a {
   border-color: #03a5fc;
 }
 
-.keywordify {
+keywordify {
   color: #ff084a
 }
 
-.symbolify {
+symbolify {
   color: #fcba03;
 }
 
-.commandify {
+commandify {
   color: #24d13e;
 }
+
+numberify {
+  color: #ffffff;
+} /*This will be changed. only for testing rn*/
