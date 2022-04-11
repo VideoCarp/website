@@ -1,12 +1,273 @@
-
 <link rel="stylesheet" href="vcsheet.css">
 <link rel="icon" href="https://i.ibb.co/N2ZYQnC/C13-BA1-D2-1095-4702-87-BC-6-E4-CA17881-E6.png">
 <title> MCFunction Beginner Guide </title>
 
 <meta name="Beginner Commands Guide" content="Tutorial targetting beginners for Minecraft commands."/>
 <span class="cntr">
-<p>
-    Removed in favor of <a href="https://wiki.bedrock.dev/tutorials/beginner-commands.html">being put on the bedrock wiki.
-</p>
+    <div style="background-color: tomato; height:30px; border:3px solid black; color: white">
+    </ul> 
+        <li style='padding-top:5px;text-align:center;font-family:Verdana;font-size: 13'>This guide is for bedrock edition.</li> 
+    </ul> 
+</div>
+    <h1 id="beginner-s-guide-to-commands">Beginner&#39;s Guide to Commands</h1>
 
+    <p>
+        <img src="https://img.shields.io/badge/6%20minutes%2058%20seconds-estimated%20read%20time-green" class=cntr><br></p>
+    <p>This guide is unofficial, to be accompanied with the guide 
+        <a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64">here</a>.<br>
+        Firstly, since you&#39;re new I recommend <strong>reading to full</strong>.<br>
+        I know that this is quite long, but I mean it&#39;s useful, and it can be accompanied with my other guide.
+        You can contact me <a href="https://discord.gg/4stpKau">here</a>
+        <br>
+    </p>
+
+
+
+    <h3 id="what-are-commands-">What are commands?</h3>
+    <hr>
+    <p>Commands are bits of text that the game Minecraft understands, 
+      they can get quite advanced, but they&#39;re <strong>easy</strong> to pick up and learn.<br></p>
+    <h3 id="why-commands-">Why commands?</h3>
+    <hr>
+    <p>Commands are pretty much the only way to create Minecraft content, 
+      without a real coding language, and they&#39;re pretty cool.<br></p>
+
+
+
+    <h3 id="beginning">Beginning</h3>
+    <hr>
+    <p>Firstly I&#39;m going to cover some logic, this is probably the <strong>most important</strong> part.<br>
+        There&#39;s a lot to cover, but I&#39;m mostly going to be covering the beginner&#39;s basics.<br>
+        In Minecraft, there are 2 types of things, as I like to think of them. 
+        Those 2 things are entities and blocks.<br>
+        You might&#39;ve heard of those a lot, and they&#39;re very important.<br>
+        <br>
+        <strong>How to Read This</strong>
+        This is kinda written weird, don&#39;t skip over any headers, 
+        unless you have full certainty of them.
+    </p>
+
+
+    <h2 id="basics">Basics</h2>
+    <hr>
+    <p>Here are some of the basics, read above for a bit of how to read this.</p>
+
+
+    <h4 id="what-is-a-block-">What is a block?</h4>
+    <hr>
+    <p>A block is essentially <yellowify> an object that takes up a 1x1 space </yellowify>. An example of a block 
+      would be say grass, dirt, etc.<br>
+        Everything in the below image is a block, don&#39;t worry about the water just yet.<br>
+        <br>
+        <img src="https://i.ibb.co/TqZjJ4m/FBB40-ECF-D2-F9-476-D-B56-B-1-EAA3-C6-D5-E08.png" width=100% class="cntr"><br>
+    </p>
+
+
+    <h4 id="what-is-an-entity-">What is an entity?</h4>
+    <hr>
+    <p>An entity as I like to think of it is <yellowify> any object that 
+        is not fixed to it&#39;s position, and can take damage.</yellowify><br>
+        Water isn&#39;t fixed to it&#39;s position, is it an entity? No, the reason for 
+        that is because water cannot take damage.<br>
+        <strong>All mobs, but not only mobs</strong> are entities.
+        Below is an example of an entity.<br>
+    </p>
+    <p><img src="https://i.ibb.co/DGbPNgQ/Webp-net-resizeimage.png" alt="chicken.png" class="cntr"><br></p>
+    <p><br>
+        <br>
+        Now that you know what entities and blocks are, that&#39;s a step forward.<br>
+    </p>
+
+
+    <h3 id="what-is-a-syntax-">What is a syntax?</h3>
+    <hr>
+    <p>A quick explanation I&#39;ll give about syntaxes is that they&#39;re <yellowify>the format of the 
+        command</yellowify>, if your command doesn&#39;t<br>
+        execute, then there&#39;s a chance it&#39;s that. <yellowify> Give all syntax errors a full read</yellowify>, 
+      if they don&#39;t work, take reference<br>
+        from either my main guide or the <code>/help &lt;command-name&gt;</code> command while in game.<br>
+        An example of a syntax error is: <code>/kill @ e</code>. That specific one will be raised 
+      because there is a space between the<br>
+        <code>@</code> and the <code>e</code>. We&#39;ll go deeper into these <code>@</code> things in a bit.
+        Below is an example of a syntax error.<br>
+        This most likely happened because the person didn&#39;t put an argument afterwards, 
+      but don&#39;t worry too much.<br>
+        <img src="https://i.ibb.co/y590bt1/D20-D2-B44-1-A2-E-4-DF9-BB91-9238320-F5-A4-C.jpg" alt="error example" class="cntr">
+    </p>
+
+
+    <h3 id="how-do-i-read-a-syntax-">How do I read a syntax?</h3>
+    <hr>
+    <p>Here&#39;s a quick sumnary, it isn&#39;t really accurate (I personally don&#39;t read them and somehow know it):</p>
+    <ul>
+        <li><code>&lt;text_here&gt;</code>. These brackets mean that this argument is <strong>required</strong>.</li>
+        <li><code>[text_here]</code>. These brackets mean that this argument is <strong>optional</strong>.</li>
+        <li>
+            <code>(option1 | option2)</code>. These brackets mean that this argument <strong>must be one
+            in the list</strong>.
+            <h2 id="coordinate-management">Coordinate Management</h2>
+        </li>
+    </ul>
+    <hr>
+    <p>This is a crucial part in commands.</p>
+
+
+    <h2 id="what-are-coordinates-">What are coordinates?</h2>
+    <hr>
+    <p>To put it in my way, coordinates are 
+      really just the location of an object. But how do you know the coordinates?<br>
+        How are coordinates formatted? Well, regarding both of them, there are three
+        <a href="https://www.dictionary.com/browse/axis">axes</a>, namely X, Y, and Z.<br>
+        <strong>How are they formatted?</strong><br>
+        The <yellowifu> X and Y </yellowify> axes should be clear, otherwise click on the hyperlink.<br>
+        Things start on the <yellowify> Z axis </yellowify>, that&#39;s what different, 
+        it&#39;s kind of like X,
+      think of it as just another X, the reason<br>
+        for the existence of the Z axis is because the game is in 3D, 
+      don&#39;t worry too much about it for now.<br>
+        <strong>How does one get the coordinates of an object?</strong><br>
+        It&#39;s quite simple to do this, you <strong>do
+      not need to teleport</strong> yourself. You can simply run this command:<br>
+        <code>/gamerule showcoordinates true</code> and your 
+      coordinates should show <strong>at the top left</strong>. 
+      Once they&#39;re showing, read the numbers after<br>
+        <code>Position</code>. It should look somewhat like this:
+      <code>Position: X, Y, Z</code>. If it doesn&#39;t show exactly like that, don&#39;t panic.<br>
+        X, Y, and Z are used to represent the number, whatever it is
+        , is where your <yellowify> legs are </yellowify>. We&#39;ll be getting into<br>
+        <yellowify>tildes </yellowify> on the next section, they will be necessary.
+    </p>
+
+
+    <h3 id="what-are-tildes-">What are Tildes?</h3>
+    <hr>
+    <p>Tildes are the <code>~</code> character, which in English means 
+        <strong>about</strong>, <strong>near</strong>, or <strong>here</strong>.<br>
+        Same thing goes for coordinates in Minecraft.<br>
+        Each tilde in a command represents from where the command is being executed, 
+        and Math can be done on those.<br>
+        To add to the coordinate: <code>~&lt;number&gt;</code>. This goes for all
+        <span class="cyellow"> X, Y, and Z axes.</span><br>
+        To remove from the coordinate: <code>~-&lt;number&gt;</code>. Note the <code>-</code>. 
+        This goes for all axes.<br>
+    </p>
+    <p>Say you want the player to teleport 10 blocks upwards, remember the <yellowify>Y axis is 
+        vertical</yellowify>.<br>
+        <code>tp &lt;target&gt; ~ ~10 ~</code>.<br>
+        Now what is <code>target</code> you may ask. Target means the
+        entity the command is being executed on.<br>
+        This command moves the player 10 blocks up from the command block if there is one, 
+        or the person who executed it.<br>
+        Don&#39;t worry yet about making the player do it, we&#39;ll cover it now.<br>
+    </p>
+
+
+    <h2 id="entity-management">Entity Management</h2>
+    <hr>
+    <p>Well this is a bad name for the section, but this section is for managing entities.<br>
+        There are a lot of commands that can <yellowify>affect entities,</yellowify>
+        but here I&#39;ll cover the crucial ones.<br>
+    </p>
+
+
+    <h3 id="deleting-an-entity">Deleting an Entity</h3>
+    <hr>
+    <p>It&#39;s very easy to delete an entity, you can simply use the <yellowify>
+        kill command to delete an entity</yellowify>.<br>
+        But what if you wanted to delete a dropped item, 
+        or perhaps a specific mob? Below is more info.<br>
+    </p>
+
+
+    <h3 id="targetting">Targetting</h3>
+    <hr>
+    <p>You can use the target selector argument, 
+        which I will be specifying information about right here.<br>
+        You can use the <code>@e</code> targetting, 
+        but further than that is what we&#39;ll be focusing on.<br>
+        <strong>@ Target Selectors</strong><br>
+        Now
+        what are these? Well, I like to explain these as the main 
+        argument in selecting which entity to use.<br>
+        A list of each one of them, and what they do is below:
+    </p>
+    <ul>
+        <li><code>@p</code> This selects the nearest player from where the command was executed.</li>
+        <li><code>@r</code> This selects a random player in the world who is online.</li>
+        <li><code>@s</code> This selects the <strong>entity</strong> that executed the command.</li>
+        <li><code>@a</code> This selects all the players.</li>
+        <li><code>@e</code> This selects all entites.
+            <code>@s</code> is one I just wanna talk a bit more about. It makes the entity that executed
+            be executed on.<br>
+        </li>
+    </ul>
+    <p>For example, I want a creeper to say <code>Aww man</code> in the chat, I&#39;d use:<br>
+        <code>execute @e[type=creeper,name=&quot;creep.er&quot;] ~ ~ ~ say Aww man</code>.<br>
+        You see those things in the <code>[]</code> brackets? They will be covered next.<br>
+    </p>
+    <p><code>@e[type=&lt;entity_type&gt;</code> 
+      will <yellowify>select a specific type of entity, this could be TNT, a dropped item, a<br>
+        specific mob type, etc, it can find any entity type.</yellowify>
+      But what if you wanted a specific entity?<br>
+        <code>@e[type=&lt;entity_type&gt;,name=&lt;name&gt;</code>. With that, you&#39;ll find one of a name.<br>
+        A very common issue I find others doing is when they&#39;re getting the name, they usually<br>
+        forget to add quotes after the <code>=</code> sign.
+      If the mob has a space in the name, simply<br>
+        instead of <code>&lt;name&gt;</code>, imagine it becomes <code>&quot;&lt;name&gt;&quot;</code>.<br>
+        The name may be ugly, and so here is an alternative, this is also a way to group entities.
+        <code>/tag &lt;target&gt; (add | remove) &lt;name: 
+          string&gt;</code>.<br>
+        This will add a new group to the targetted entity, after adding it you 
+        can remove the name, if there is one.<br>
+        Now <code>string</code> means to add quotes, 
+      just like the name in the target selector.<br>
+        You may want to check for the range, here&#39;s how:
+        <code>@e[r=&lt;range number&gt;]</code><br>
+        In most guides, <code>number</code> will be 
+      represented as <code>int</code> or <code>integer</code>. They both mean a number.<br>
+        In the case of a decimal, it's considered <code>float</code>.
+    </p>
+
+
+    <h2 id="execute">Execute</h2>
+    <hr>
+    <p><strong>This is an extremely important section!</strong>
+        This section is fully dedicated to making <yellowify>entities
+        execute a command</yellowify>, think of it as <code>sudo</code>, but for commands.<br>
+        The execute command is the <strong>most powerful</strong> command in the 
+        entire game, but don&#39;t worry, it isn&#39;t hard to<br>
+        pick up on.
+        <code>/execute &lt;target&gt; &lt;location&gt; &lt;selected command
+          syntax&gt;</code> is the syntax.<br>
+        The location argument will be discussed a bit below.<br>
+        <code>&lt;selected command syntax&gt;</code> 
+        refers to the command you&#39;re getting the entity to execute. I always
+        have my location as <code>~ ~ ~</code> and when it&#39;s<br>
+        like that, it executes anywhere, that&#39;s at least what I use for myself.<br>
+        But what if you wanted to check if someone was on a specific block type?<br>
+        <code>/execute &lt;target&gt; &lt;location&gt; detect &lt;block to
+        detect&gt; &lt;data value&gt; &lt;detectPos&gt; &lt;command&gt;</code>.<br>
+        That would be your syntax.<br> <code>detect</code> isn&#39;t in brackets, 
+        this means to just put it there, regardless.<br>
+        Say you wanted a creeper walking on grass to kill nearby ocelots, you&#39;d use this:
+        <code>
+        /execute @e[type=creeper] ~ ~ ~ detect grass 0 ~ ~-1 ~ kill @e[type=ocelot,r=5]</code><br>
+    </p>
+    <p>Now that you&#39;ve gotten this far, I believe you&#39;re ready for my other guide,
+      which has a contents panel.<br>
+        Click <a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64">here</a>.<br>
+        Also quick notice, use the power of effect, armor stands, tags and names.
+    </p>
+
+
+    <h1 id="exporting-your-map">Exporting your Map</h1>
+    <hr>
+    <h5 id="there-s-a-guide-for-functions-in-my-other-guide-which-is-linked-a-bit-above-as-a-hyperlink-br-">
+      There&#39;s a guide for functions in my other guide which is linked a bit above as a hyperlink.<br></h5>
+    <p>Visit <a href="https://gist.github.com/VideoCarp/e6ac9264b545580c95f93ce76d12cc71">here</a> to see how to.
+        Give me feedback in the comments!<br>
+    </p>
+
+    <h3 id="examples">You can take a look at 
+        <a href="https://github.com/VideoCarp/carpcorps/tree/master/function_packs">some examples.</a></h3>
 </span>
