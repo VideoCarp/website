@@ -1,0 +1,39 @@
+<h1 id="exporting-your-map">Exporting your Map</h1>
+<p>Follow the process below.</p>
+<h3 id="finding-your-directory">Finding your Directory</h3>
+<p>Click the &gt; like thing to expand.</p>
+<details>
+  <summary> Windows 10 </summary>
+Open up the &quot;Run&quot; app, (shortcut Win+R) and insert this.<br>
+<code>%LocalAppData%\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\minecraftWorlds</code><br>
+This will find the Minecraft Windows 10 Edition directory and you will see some folders here.<br>
+  </details>
+
+<details>
+  <summary> iOS </summary>
+Use the &quot;files&quot; app and find &#39;On my iPad&#39; or &#39;On my iPhone&#39;, find Minecraft.<br>
+  Now navigate like this:<code> games -&gt; com.mojang -&gt; minecraftWorlds </code>
+  </details>
+
+<details>
+  <summary> Android </summary>
+Use any file explorer app, and follow this path:<br>
+<code>/sdcard/games/com.mojang/</code>
+</details>
+
+<h3 id="continuing">Continuing</h3>
+<h5 id="this-part-is-for-how-to-do-the-rest-after-finding-your-minecraftworlds-folder-">This part is for how to do the rest after finding your minecraftWorlds folder.</h5>
+<p>Now that you&#39;ve found your minecraftWorlds folder, select a sorting option for your folders.<br>
+Preferably, if available sort by which was last edited, tne most recently edited one, if you exited properly<br>
+should be the correct map, read the <code>level_name.txt</code> file, if it has the correct name,<br>
+Now, you would need to have some way of compressing and renaming files, renaming files should be covered for<br>
+Windows and Android, for iOS, use iZip.<br>
+it is the correct world. Now that you have the exact folder, and the correct apps you need for your map, follow this process:<br></p>
+<ul>
+<li>Compress the <strong><em>contents</em></strong> of the folder.
+Zip the contents of the folder, not the folder itself, otherwise your .mcworld will fail to import.</li>
+<li>Rename to <code>your_map&#39;s_name</code>
+You don&#39;t need to make it match anything, just use plain text. Do not use <code>§eYellow</code> for example, it is unecessary and makes your installer look bad.</li>
+<li>Change the zip file&#39;s extension to <code>.mcworld</code>
+You&#39;ve got your compressed folder now set up. Try testing it!<br></li>
+</ul>
