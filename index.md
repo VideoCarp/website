@@ -1,4 +1,5 @@
-  MCFunction Beginner Guide 
+<link rel="stylesheet" href="assets/css/style.scss"> 
+ MCFunction Beginner Guide 
 
 *   This guide is for bedrock edition.
 
