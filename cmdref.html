@@ -1,0 +1,246 @@
+<link rel="stylesheet" href="vcsheet.css">
+
+<h2 id="what-is-this-">What is this?</h2>
+<p><img src="https://img.shields.io/badge/6%20minutes%2033%20seconds-estimated%20read%20time-brightgreen" alt="readtime"><br>
+This is a documentation for Bedrock Minecraft commands, which is unofficial, written by VideoCarp.<br>
+<strong>Visit <a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#navigate">Navigate</a> for easy navigation between commands.</strong><br>
+<strong>Are you a beginner?</strong><br> 
+If you&#39;ve not been redirected from my other guide, click <a href="https://gist.github.com/VideoCarp/24addfd65c82cb38009b5c34bfa2c188">here</a> for my beginner&#39;s guide.<br>
+To show your appreciation, you can star this gist, or comment with feedback.<br>
+Hate? Give me feedback in the comments, or by contacting me through my server (check below headline)</p>
+<h2 id="can-i-distribute-this-guide-">Can I distribute this guide?</h2>
+<p>Please don&#39;t. Always put the link to this direct website, otherwise contact me on discord, at <a href="https://discord.gg/4stpKau">my server</a>.</p>
+<h1 id="unofficial-mcfunction-documentation">Unofficial Mcfunction Documentation</h1>
+<p>This is also for commands, so do take it for that reason, this is not an official guide.<br>
+<span style="color: #ff0000">A dictionary is at the lowest part of the documentation, take a look at that if you do not<br> understand some words.</span></p>
+<h1 id="navigate">Navigate</h1>
+<ul>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#fully-entity-related-commands">Entity Related</a><ul>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#execute">Execute</a></li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#testfor">Testfor</a></li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#spreadplayers">Spreadplayers</a></li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#spreadplayers">Tag</a></li>
+</ul>
+</li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#block-related-commands">Block Related</a><ul>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#testforblock">Testforblock</a></li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#setblock">Setblock</a></li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#fill">Fill</a></li>
+</ul>
+</li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#other">Other</a><ul>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#effect">Effect</a></li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#teleport">Teleport</a></li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#summon">Summon</a></li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#clear">Clear</a></li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#give">Give</a></li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#tellraw">Tellraw</a></li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#title">Title</a></li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#particle">Particle</a></li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#scoreboard">Scoreboard</a></li>
+</ul>
+</li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#non-commands">Non-Commands</a><ul>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#conditional">Conditional</a></li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#manifest">Manifest</a></li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#functions">Functions</a></li>
+</ul>
+</li>
+<li><a href="https://gist.github.com/VideoCarp/eeaf915a2361d93f0fd8cf2c72d6db64#dictionary">Dictionary</a></li>
+</ul>
+<h1 id="fully-entity-related-commands-">Fully Entity Related Commands:</h1>
+<h2 id="execute">Execute</h2>
+<p><span style="color: #ff0000">The execute command is used to force entities to run commands. The command’s syntax is as the following without detect.</span><br>
+<code>/execute &lt;target&gt; &lt;location&gt; &lt;command&gt; &lt;selected command syntax&gt;</code><br>
+The syntax with a detect is as the following:<br>
+<code>execute &lt;origin: target&gt; &lt;position: x y z&gt; detect &lt;detectPos: x y z&gt; &lt;block&gt; &lt;data: int&gt; &lt;command&gt;</code><br>
+If the entity detects the block to detect on the detect position, the command will be executed.<br>
+Gamepedia: <a href="https://minecraft.gamepedia.com/Commands/execute">Click here to see gamepedia.</a><br></p>
+<h2 id="testfor">Testfor</h2>
+<p><span style="color: #ff0000">This command tests for entities, it can be used to activate conditional command blocks. If the testfor command finds the entity, the command is successful.</span><br>
+This command can also be used to count entities.<br>
+Command syntax:<br>
+<code>/testfor &lt;target&gt;</code><br></p>
+<h2 id="spreadplayers-br-">Spreadplayers<br></h2>
+<p><span style="color: #ff0000">This command teleports entities to surface within a specified area.</span><br>
+Syntax:<br>
+<code>/spreadplayers &lt;x: value&gt; &lt;z: value&gt; &lt;spreadDistance: float&gt; &lt;maxRange: float&gt; &lt;victim: target&gt;</code><br></p>
+<h2 id="tag-br-">Tag<br></h2>
+<p><span style="color: #ff0000">Controls scoreboard tags for entities.</span><br>
+Other Info regarding ”tag”:<br>
+This can also be used to add certain tags on entities in the <code>[tag=tagname]</code> entity selecting part.<br>
+Syntax:<br>
+<code>tag &lt;entity: targets&gt; &lt;add|remove&gt; &lt;name: string&gt;&lt;br&gt;
+tag &lt;entity: targets&gt; list</code><br>
+This command could be used to set-up a restriction for users other than OP. However, regular commands cannot change<br>
+permissions</p>
+<h1 id="block-related-commands-br-">Block Related Commands<br></h1>
+<h2 id="testforblock-br-">Testforblock<br></h2>
+<p><span style="color: #ff0000">This command tests for whether a certain block is in a specific location. See testforblocks<br>
+(with an S) for multiple block testfor. This command can be used to activate conditional command blocks.</span><br>
+Command syntax:<br>
+<code>testforblock &lt;position: x y z &gt; &lt;Block&gt; [dataValue]</code><br></p>
+<h2 id="testforblocks">Testforblocks</h2>
+<p><span style="color: #ff0000">This command tests whether the blocks in two regions match.You can use this for conditional command blocks.</span><br>
+Command syntax:<br>
+<code>testforblocks &lt;begin: x y z&gt; &lt;end: x y z&gt; &lt;destination: x y z&gt; [masked|all]</code><br>
+Arguments in masked/all.<br>
+Specifies how to match blocks. Must be one of:<br>
+all — every block in the source and destination regions must match exactly.<br>
+masked — air blocks in the source region will match any block in the destination region.<br>
+If not specified, defaults to all.<br></p>
+<h2 id="setblock">Setblock</h2>
+<p><span style="color: #ff0000">Setblock is a command that places a block at the specified location.</span><br>
+Syntax: <br>
+<code>/setblock &lt;location&gt; &lt;block&gt; [data]</code>}<br></p>
+<h2 id="fill">Fill</h2>
+<p><span style="color: #ff0000">Fill is a command that places blocks from a specified location to another.</span>
+<code>/fill &lt;from: x y z&gt; &lt;to: x y z&gt; &lt;block&gt; [data]</code>.<br></p>
+<h1 id="other">Other</h1>
+<h2 id="effect">Effect</h2>
+<p><span style="color: #ff0000">This command can add or remove status effects on players and other entities.<br>
+You know what effects are, they’re just potion stuff.</span>
+Syntax:<br>
+Clear Effects<br>
+<code>effect &lt;player: target&gt; clear</code><br>
+Add or remove an effect<br>
+<code>effect &lt;player: target&gt; &lt;effect: Effect&gt; [seconds: int] [amplifier: int] [hideParticles: true/false]</code><br>
+Amplifier is the level of the effect. eg: strength 5 (amplifier).<br></p>
+<p><br>
+<br></p>
+<h2 id="teleport">Teleport</h2>
+<p><span style="color: #ff0000">The teleport command teleports entities to a specified location, or another entity.<span style="color: #ff0000"><br>
+<span style="color: #00ff00">Syntax Laws:<br>
+Entity/ies can be teleported at once to one target.<br>
+If an entity is requested to teleport to more than one target, the condition will fail.<br>
+This can be used to determine if a mob has died.<br>
+Multiple entities can teleport to one coordinate.</span><br>
+Command Syntax:<br>
+<code>teleport &lt;victim&gt; (location | target)</code><br>
+Advanced usage of the syntax is very complicated, click <a href="https://minecraft.gamepedia.com/Commands/teleport#Syntax">here</a><br> 
+for more information regarding advanced usage of the syntax.<br></p>
+<h2 id="summon">Summon</h2>
+<p><span style="color: #ff0000">The summon command is used to spawn in new entities into the world.<br>
+Entities such as TNT can also be summoned with the /summon command.</span><br>
+Syntax:<br>
+With spawn event<br>
+<br>
+<code>summon &lt;entityType: EntityType&gt; [spawnPos: x y z] [spawnEvent: string] [nameTag: string]</code>
+<br>
+Without spawn event<br>
+<br>
+<code>summon &lt;entityType: EntityType&gt; [nameTag: string] [spawnPos: x y z]</code>
+<br></p>
+<h2 id="clear">Clear</h2>
+<p><span style="color: #ff0000">The clear command is a command used to remove items from a player’s inventory.</span><br>
+Syntax:<br>
+<br>
+<code>/clear &lt;target&gt; &lt;item name&gt; &lt;data: integer&gt; &lt;maxCount&gt;</code>
+<br>
+The data interval makes sure that the item matches the data interval, or the command will fail, this will not a trigger a<br>
+conditional command block.<br>
+To test for an item in a player’s inventory, use the following syntax:<br>
+<br>
+<code>/clear &lt;target&gt; &lt;item name&gt; &lt;data&gt; 0</code><br>
+<br>
+The 0 will replace the command instead of deleting an item from a player’s inventory, it will check for one.<br>
+<br>
+<br>
+<br></p>
+<h2 id="give-br-">Give<br></h2>
+<p><span style="color: #ff0000">The give command allows users to obtain items normally unobtainable, or items that already<br> are through commands.</span><br>
+Syntax:<br>
+<code>give &lt;player: target&gt; &lt;itemName: Item&gt; [amount: int] [data: int] [components: json]</code><br>
+The cans for that are: (on bedrock)<br>
+<code>{“can_place_on”:{“blocks”:[“BLOCK”]}}</code><br>
+<code>{“can_destroy”:{“blocks”:[“BLOCK”]}}</code><br>
+<a href="https://minecraft.gamepedia.com/Commands/give#Arguments">Available arguments (gamepedia)</a><br></p>
+<h2 id="tellraw">Tellraw</h2>
+<p>This command sends a raw json message to the specified target. This appears without any external text, the message appears in chat alone, unlike a /say message.
+Command Syntax (bedrock):
+<code>/tellraw &lt;target&gt; &lt;raw json message&gt;</code>
+The raw json message field is to be filled with something like this
+<code>{“rawtext”:[{“text”:”your text”}]}</code></p>
+<h2 id="title">Title</h2>
+<p><span style="color: #ff0000">The title command shows text onto the middle of the player’s screen, their action bar or under it as a subtitle.</span>
+Syntax:
+<br>
+<code>/title &lt;target&gt; (title | subtitle | actionbar) &lt;text&gt;</code>
+<br>
+<a href="https://minecraft.gamepedia.com/Commands/title#Syntax">View gamepedia syntax</a></p>
+<h2 id="particle">Particle</h2>
+<p>Particle is an extremely useful and decorative command in Minecraft. It just adds cool particles and overall<br>
+adds character. The syntax for it is:<br>
+<code>/particle &lt;effect&gt; &lt;location&gt;</code>.<br>
+But what if you wanted to use the location as a target entity? You can use the execute command for that.<br>
+You can see a list of effects you can use <a href="https://minecraft.gamepedia.com/Particles#Types_of_particles">here</a>.</p>
+<h2 id="scoreboard">Scoreboard</h2>
+<p>Scoreboard is an interesting command. It&#39;s also a very confusing one. Scoreboard is used to store the score of<br>
+players in Minecraft, or maybe even entities if that&#39;s possible.<br>
+To add an objective, use:<br>
+<code>/scoreboard objectives add &lt;objective: string&gt; dummy [displayName: string]</code><br>
+and to change the value of an objective, use:<br>
+<code>scoreboard players &lt;set|add|remove&gt; &lt;player: target&gt; &lt;objective: string&gt; &lt;count: int&gt;</code>.<br>
+There are a lot of things, but those are the most basic.<br>
+See <a href="https://minecraft.gamepedia.com/Commands/scoreboard#Syntax">gamepedia</a> for more information.</p>
+<h1 id="non-commands">Non-Commands</h1>
+<h2 id="conditional">Conditional</h2>
+<p><span style="color: #ff0000">Conditional command blocks are command blocks usually used in chains are command blocks that<br>
+only work if the condition is met.<br>
+These can be used in chains for shop systems and such.</span><br>
+Scroll down in <a href="https://minecraft.gamepedia.com/Command_Block#Modification">official gamepedia</a> a little bit<br>
+until the Condition headline.</p>
+<h2 id="manifest">Manifest</h2>
+<p><span style="color: #ff0000">The manifest is a key file in all resource packs, worlds, behavior packs, etc. The manifest is what allows the pack to show on the list.</span>
+Sources:<br>
+<a href="https://minecraft.gamepedia.com/Bedrock_Edition_add-on_documentation#manifest.json">Bedrock Manifests</a><br>
+<a href="https://pastebin.com/DXjv75sb">Bedrock Resources Manifest</a><br>
+<a href="https://pastebin.com/zUFzsuVU">Bedrock Behaviors Manifest</a><br></p>
+<h2 id="functions">Functions</h2>
+<p>Functions are a way to kinda import a ton of commands into new worlds easily, unlike command blocks however, they cannot be conditional.<br>
+When you run the <code>function</code> command, it executes the .mcfunction file named by your argument.<br>
+<br>
+For example, a file named <code>cool_file.mcfunction</code> will execute if you return the argument as <code>cool_file</code> in other words,<br>
+<code>/function cool_file</code> , however, if a different argument is written, the game will search for the .mcfunction named by<br> that, if none, the command will fail.<br>
+<br>
+.mcfunction files are always filled with nothing but commands.<br>
+<br>
+Now for the folder setup.<br>
+<br>
+Bedrock Edition:
+<span style="color: #ff0000"></span></p>
+<blockquote>
+<p><code>(your pack name)</code>:open_file_folder:<br></p>
+<blockquote>
+<p><code>(functions)</code>:open_file_folder:, <code>&lt;manifest.json&gt;</code>📄 , <code>&lt;pack_icon.png&gt;</code>📄<br></p>
+<blockquote>
+<p><code>&lt;filename.mcfunction&gt;</code>:page_facing_up: <br></p>
+<h5 id="don-t-understand-what-each-bracket-means-read-the-dictionary-at-the-bottom-">Don&#39;t understand what each bracket means? Read the dictionary at the bottom.</h5>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="dictionary">Dictionary</h1>
+<p><strong>How to Read Guide:</strong><br>
+<strong>1.</strong> Syntax<br>
+This means the format the command is used in.<br>
+<strong>2.</strong> Manifest<br>
+This is the file in which you’ll have for things such as texture packs or bedrock edition addons.<br>
+<strong>3.</strong> &lt;&gt; bracketing in syntax<br>
+This means that this part of the command is required for the specified use.<br>
+<strong>4.</strong> () bracketing in syntax<br>
+Separated by |, this means that this part of the syntax must be one of the things within the brackets.<br>
+<strong>5.</strong> [] bracketing in syntax<br>
+This means that the part of the syntax is optional.<br>
+<strong>6.</strong> Target<br>
+This is the entity the command is being executed on.<br>
+<strong>7.</strong> Entity<br>
+An entity is a mob, a player, a dropped item, an armor stand, falling gravel/sand or anything in the game<br>
+that isn’t in a completely solid state and fixed to it’s location.<br>
+This may not be the best explanation for an entity, but you get the point.<br>
+<strong>8.</strong> File Bracketing<br>
+I use this to define a folder. Eg: <code>&lt;file&gt;, (folder)</code><br>
+In some cases I may also have an icon. &quot;:page_facing_up:&quot; means file, :open_file_folder: means folder.<br>
+<strong>9.</strong> Integer
+Normal integers are really just digits. In this case, integers are numbers still, but must be valid data values.</p>
+<h3 id="tags">Tags</h3>
+<p>Google search tags: <code>gist github mcfunction minecraft commands bedrock edition mcpe mcbe mc pe pocket edition learn commands function-pack videocarp guide syntax execute documentation docs carp video game minecraft learn commands syntax bedrock minecraft</code></p>
