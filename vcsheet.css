@@ -1,11 +1,4 @@
 
-body {
-  background-color: #222;
-  color: #aaa;
-  font-family: Verdana, Geneva, sans-serif;
-  text-align: left;
-}
-
 h1 {
   background-color: #222;
   color: #fff;
@@ -86,4 +79,11 @@ yellowify {
 blockquote {
   background-color: #0047AB;
   color: #fff;
+}
+
+body {
+  background-color: #222;
+  color: #aaa;
+  font-family: Verdana, Geneva, sans-serif;
+  text-align: left;
 }
