@@ -63,6 +63,7 @@ to show "Hello World!" on the screen, it shows that. Think of it as telling the 
 > ℹ️ You aren't telling the computer what to do in most cases. You're telling the programming language
 > you're using to do that for you. If this doesn't make sense, do ignore it.
 > Learn what's known as "computational thinking" if necessary; it's very useful.
+
 **Understanding what coding really is:**  
 Coding has a fuzzy definition. But I would define it as creating a representation of what can end up being
 a program later. So, things like Scratch still count as code and writing code in files counts too.
