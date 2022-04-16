@@ -155,7 +155,108 @@ There's also object-oriented programming, which is quite common too.
 And there are declarative programming sub-paradigms, such as functional and markup.
 * Declarative: concerned with the "what" of the program.
 * Functional: oriented towards mathematical-style functions and immutable variables. It is a sub-paradigm of declarative.
-* Markup: used to show meaningful imagery.
+* Markup: used to show meaningful imagery.  
 This book mainly focuses on imperative programming, and I suggest you stick to it for now.
 It's not in the scope of this book to discuss at length programming paradigms, but if any interest you at some point,
 then do search them up.
+# The Art of Googling
+What really is googling? To keep Google happy, I define googling as the use of the Google search engine to get
+information on any subject. And programmers google a lot more than you'd think. In fact, googling is the most
+important skill for a programmer to have. You google to learn a new programming language, a new library, to figure
+out what's wrong with your code, to find help and so much more. So, how do you google effectively? Googling is a skill
+that can be cultivated over years of experience. But the good news is, because you aren't *yet* a skilled googler,
+you can boost your skill quickly. How do you do that? By using the google search modifiers syntax. They
+might have their own name, but I'll just use this. "Syntax" simply means the way something is written. Collectively,
+English's syntax is composed of its grammar, punctuation, vocabulary, etc.
+![](https://raw.githubusercontent.com/VideoCarp/website/gh-pages/readables/CCE0F897-D8EE-4D65-B998-77F5E14CEDBE.jpeg)
+I got this image straight from [Google](https://support.google.com/websearch/answer/2466433?hl=en), and you can
+see them there if you'd like. This image does not show all search modifiers, but I doubt you're going to be
+looking at social media for answers to your programming problems, save for Reddit. Do you ever find that when you're
+searching for something, you keep getting unrelated results? Or perhaps Google ignores some of your search query?
+Both these are problems I frequently encounter while searching. But the solution's easy. If you don't want Google
+to ignore some words in your search query, wrap it in quotes, like this `"GitHub pages"`. This will only return results
+that have the text "GitHub pages" exactly; the word GitHub has to follow the word pages. If you just want results
+that contain both, then use the search query `"GitHub" "Pages"`. Let's say you keep searching for stack exchange,
+i.e.: exchanging a stack. This is a model for search queries you're likely to make if you forget some terms. You'll
+keep getting results from StackExchange, the website and other websites that talk about it. So, now you try
+`exchanging a stack`. Alas, that changes nothing. A good idea here is to eliminate results containing "StackExchange."
+So, to your new search query, add `-stackexchange`. And now, you've found your result: swapping stacks.
+Googling is tough. But here's a short, simple list on when you should use certain search modifiers and techniques.
+* Quotes: when you have an error. Be careful not to include the part where it says where the error happened
+in your code, though.
+* Minus: When you keep getting a result you don't want.
+* `site:foo.bar`: when you want to find an answer to a question that you lost.
+* `before:date` and `after:date`: when the results you get are useless because they're too new or too old.
+**What websites to look for:**  
+It depends on the programming language you're using. But for most programming languages, try to find StackOverflow
+answers, GitHub projects or issues, and really any website you find.
+
+# Picking a programming language
+
+This is a hole a lot of emerging programmers fall into, they just can't pick which language to get started. Well,
+I'm here to help with that. Picking a language is hard, because there are so many options. "I wanna do JavaScript,
+so I can do web development, but I don't like the language." Or "I wanna do Python because it has great libraries,
+but I don't like it."
+Lots and lots of things like that. The real answer is, it honestly doesn't matter what your first language is.
+I tried starting with JavaScript, but I found it too confusing and ended up starting with Python. To this day,
+Python is the language I know most. But learning it was really difficult. At some point, I decided why don't I also
+learn other programming languages? So I tried. It was hard, but a lot easier. And now, I found learning Haskell,
+regarded as a difficult programming language, quite easy. 
+What I mean to say here, is you should start with whatever programming language you lean towards, even if you have
+doubts about it.
+**My controversial opinions:**  
+I have some rather controversial opinions about which programming language to start with. This is the nature
+of anyone helping others pick a language to start with. I recommend beginning with a simple programming language,
+like Python, Lua, or Ruby. Start with a dynamically typed programming language, because types are a difficult
+concept. Don't start with something like C#, Java or C++. C# and Java require you to understand object-oriented
+programming, which is a difficult concept for beginners and is highly controversial in the programming community.
+And they're both just simply hard. C++ is *very* difficult in comparison to other languages, too. My advice
+would be to start with a simple language, like one of the three I listed, and then if you want to, work your way
+to more difficult languages. In truth, you don't always need to use difficult programming languages. You might hear
+that Python and Ruby are slow. And that's absolutely true. They are slow. But in most cases, it doesn't matter.
+And Lua's really fast with LuaJIT, although Lua is not very popular. There are plenty of fast, simple programming
+languages, like Go, Julia and more. But unless you like their syntax, I'd begin with the simplest language
+I can find. Obviously, this doesn't mean begin with HTML & CSS, because they're markup languages and likely
+won' help you understand others. Not to mention they're pretty frustrating compared to other code.
+
+##### Picking a paradigm
+
+Another hole programmers often fall into is choosing a paradigm. My advice is to do what you like. Do
+procedural programming if you like it, do object-oriented programming if you like it. But I'll try to give
+an overview of the advantages and disadvantages of some of the most popular paradigms.
+
+**Procedural:**  
+Advantages:  
+* Intuitive and simple
+* Widely supported  
+Disadvantages:
+* Rare for some fields, like GUI.  
+
+**Object-oriented:**
+Advantages:
+* Used for GUI
+* Good for making libraries
+* Popular  
+Disadvantages:
+* Complex
+* Clutters code (verbose)  
+
+**Functional:**  
+Advantages:
+* Very easy to debug
+* Concise  
+Disadvantages:
+* Complex to get started.
+* Less widely supported.  
+A lot of people will disagree with me here. I ignored any advantage or disadvantage that pops up in all 3.
+My advice would be to begin with procedural. It's really the simplest. Then you can dive into one of the other
+paradigms once you're experienced enough.
+
+# Fields to program in
+I'll just list a few popular programming topics.
+* App development: GUI (generally object-oriented, but you *can* use other paradigms).
+* Web development: Frontend (what the user sees) and backend (managing the server and taking requests from the frontend)
+* Algorithms and data structures: I really can't explain it, so search it up.
+* Parsing: breaking down language into meaningful units (I have a guide on this in my website).
+* Concurrency: dealing with multiple programs running at the same time.  
+and many more. It again depends on the language.
