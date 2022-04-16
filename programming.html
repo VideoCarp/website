@@ -1,0 +1,244 @@
+<link rel="stylesheet" href="vcsheet.css">
+
+<h1 id="introduction">Introduction</h1>
+<p><strong>Who&#39;s this book for?</strong>
+This book is for anyone interested in programming, who has found it difficult to get started.
+<strong>What this book covers:</strong></p>
+<ul>
+<li>Why program?</li>
+<li>The basic information needed to get started with programming.</li>
+<li>The different ways of programming.</li>
+<li>The art of Googling.</li>
+<li>Picking a programming language.</li>
+<li>Fields to program in.
+<strong>What this book does NOT cover:</strong></li>
+<li>How to program in a specific programming language</li>
+<li>Advanced programming theory
+Programming is a wide, complex subject. And it isn&#39;t easy to start programming, because the terminology 
+used can often be confusing. This book aims to fill in many of the gaps, and empower readers to 
+overcome these barriers and become skilled Google users.</li>
+</ul>
+<details>
+  <summary> Maths </summary>
+  You might&#39;ve heard that you need maths for programming. This is <em>kinda</em> true, but also not really.
+  You need maths if you do AI or data science. But you don&#39;t need maths to make a website.
+  There is some mathematical theory in programming, but it&#39;s not complex, so don&#39;t worry. The maths
+  you need for programming depends on the subject, but in general, it&#39;s not hard.
+</details>
+
+<h1 id="why-program-">Why program?</h1>
+<p>Why should you program? This is the first important question to ask yourself. Are you interested in programming?
+Perhaps you&#39;re a student? For work?
+Whoever you are, programming is an enriching subject, that once understood, will be a useful or even fun tool to use. 
+Programming may appear an impossible task, but don&#39;t let that affect you. It&#39;s just hard to get started. </p>
+<blockquote>
+<p>ℹ️ Some subjects are very difficult in programming, but you&#39;ll find a lot are easy.</p>
+</blockquote>
+<p><strong>The practical uses of programming:</strong><br>Programming is applicable in a variety of fields and sometimes you don&#39;t even know you&#39;re using a program.
+Programming is used in engineering, medicine, science, software development and plenty of others.
+In regards to what programming can achieve, the answer is ”anything.” 
+Any task you can think of, that can happen, can be programmed. 
+Websites, applications, operating systems and general appliances are or can be programmed. 
+In short, programming is useful if you need to make something happen at a more abstracted level.
+<strong>Programming as a hobby:</strong><br>Programming can be a hobby, too. 
+It can be a particularly enriching activity,
+that will change your thinking for the better and help you understand things around you. 
+It&#39;s not easy to describe it, but I&#39;ll also say is that it opens your mind.</p>
+<h1 id="programming-basics">Programming basics</h1>
+<p><strong>Thinking programmatically:</strong><br>The first step to get into programming is to understand how to think about it. 
+First off, a &quot;program&quot; is a series of instructions to be executed by a computer. This definition has some computer
+jargon. Simply, a &quot;program&quot; is a bunch of code that can be ran by a computer. Sometimes, programs are used
+interchangeably with &quot;source files,&quot; which are files that contain code written in a programming language.
+So a program is what the computer understands and a source file is what you write. It&#39;s not too important to disting
+uish these terms at this point, but you can.</p>
+<blockquote>
+<p>ℹ️ Collections of source files or programs that you might use to write a program can be known as &quot;libraries&quot;
+or &quot;modules.&quot; Note that &quot;libraries&quot; have a shorthand: &quot;libs.&quot;</p>
+</blockquote>
+<p>So now you have a basic idea of how files are organised when programming. Another important part of thinking like
+a programmer is to consider everything to be ordered instructions you give the computer. You tell the computer
+to show &quot;Hello World!&quot; on the screen, it shows that. Think of it as telling the computer to &quot;do this, then do that.&quot;</p>
+<blockquote>
+<p>ℹ️ You aren&#39;t telling the computer what to do in most cases. You&#39;re telling the programming language
+you&#39;re using to do that for you. If this doesn&#39;t make sense, do ignore it.</p>
+</blockquote>
+<p><strong>Understanding what coding really is:</strong><br>Coding has a hazy definition. But I would define it as creating a representation of what can end up being
+a program later. So, things like Scratch still count as code and writing code in files counts too.
+When you program, make sure to think of it as that.
+<strong>Writing code:</strong><br>To recap:</p>
+<ul>
+<li>Program: something that the computer can execute, usually generated from a source file</li>
+<li>Source file: a file that is given to a programming language to produce a program</li>
+<li>Programming: creating a representation of what can end up being a program.
+This won&#39;t help you much, yet. So, let&#39;s understand how to write code. In general, these are the patterns you&#39;ll
+find in most programs.</li>
+<li>Functions</li>
+<li>Arguments</li>
+<li>Parameters</li>
+<li>Variables</li>
+<li>Constants</li>
+<li>Immutables</li>
+<li>Mutables</li>
+<li>References</li>
+<li>Types</li>
+<li>Strings</li>
+<li>Integers</li>
+<li>Floating-point numbers</li>
+<li>Lists and arrays.</li>
+<li>Tuples</li>
+<li>Control flow</li>
+<li>If statements</li>
+<li>While loops</li>
+<li>For loops</li>
+<li>Arithmetics: they&#39;re just maths.
+This can look overwhelming. But once you get these, you&#39;ll find reading other docs a lot easier. Let&#39;s begin with
+the simplest: variables. Variables are like pronumerals in maths, only they can be multiple characters.<h5 id="variables">Variables</h5>
+A variable is a name for a value. For example, imagine a variable named <code>pi</code> with a value of <code>3.14159</code>.
+Now, when you write <code>pi</code>, you get <code>3.14159</code>.
+There are 3 basic kinds of variables, and they can be confusing. The most common are mutable variables. For example,
+you define a variable named <code>x</code> as <code>5</code>. Then, you change <code>x</code> to <code>2</code>. Of course, because programs execute in order,
+all code before you changed <code>x</code> to <code>2</code> will result in <code>5</code>. Unlike maths, variables can be defined in terms of themself.
+So, if you had changed <code>x</code> to be <code>x + 1</code>, it would have been <code>5 + 1</code>, which is <code>6</code>. The other kinds, immutable and
+constant variables can&#39;t change. They&#39;re not the same, but I won&#39;t confuse you.<h5 id="references">References</h5>
+References are simply when you write a name for something, like an identifier or a function.
+Not much else to say.<h5 id="functions">Functions</h5>
+Functions are used to name and reuse bits of code you have written. For example, imagine a program that adds
+<code>5</code> and <code>2</code> and outputs it, but you want that to happen many times, not just once. In this case, one solution
+would be to use a function. You&#39;d name your function whatever you want, with parameters and a body.
+Parameters are <em>variables</em> that can take <em>arguments</em> from the programmer calling the function. Arguments
+are just any value that will make sense in the function&#39;s body, at the simplest level. The function&#39;s body
+is the code inside it. For example, imagine a function named <code>add1</code> with the parameter <code>num</code> and the body
+<code>return num + 1</code>. If you call <code>add1</code> with <code>1</code> as the argument for the parameter <code>num</code>, then you&#39;ll get
+<code>2</code>. <code>return</code> usually means what the function should result in.
+This is kind of similar to functions in mathematics, for example <code>f(x) = x + 1</code>.<h5 id="control-flow">Control Flow</h5>
+I want something to happen only if a certain condition is met. How do I do that? By using what is called an <code>if</code>
+statement. An <code>if</code> statement is composed of a condition and a body. A condition is exactly what it sounds like.
+For example, an <code>if</code> statement with the condition that <code>pi &gt; 3</code> and a body that outputs &quot;Pi is greater than 3&quot;
+would run, only if <code>pi</code> is greater than 3. <code>if</code> statements can be accompanied with <code>else</code> and <code>else if</code> bodies.
+<code>else</code> only happens if all conditions fail, and <code>else if</code>s only happens if all conditions above it fail.</li>
+</ul>
+<p>What about if I want something to only happen while a condition is met? That&#39;s why the <code>while</code> keyword exists,
+and it&#39;s pretty much the same as <code>if</code> in terms of use.</p>
+<p>What if I want something to happen a set number of times? Here, you can use a <code>for</code> loop. The way they&#39;re used is
+different in different programming languages, but generally, there is what&#39;s known as a control variable and the
+number of iterations. A control variable is a variable that changes every time the body of the <code>for</code> loop is repeated
+that you can access. Iterations are the repetitions of the body of the <code>for</code> loop.</p>
+<p>Collectively, these are called control flow.</p>
+<h5 id="types">Types</h5>
+<p>Types are something you will hear a lot about in programming.</p>
+<ul>
+<li>Strings: text</li>
+<li>Integers: whole numbers, negative or not</li>
+<li>Floating-point numbers: numbers with a decimal place</li>
+<li>Lists and arrays: multiple same-type values that can be referenced using one name</li>
+<li>Tuples: multiple values that can be referenced using one name
+There&#39;s also &quot;typing,&quot; which doesn&#39;t refer to writing in a computer, but how types are default with.</li>
+<li>Dynamic typing: a variable&#39;s value can change type, and a function&#39;s parameters&#39; values as well as its
+resulting (return) value can change type.</li>
+<li>Static typing: a variable&#39;s value cannot change type, a function&#39;s types cannot change</li>
+</ul>
+<h1 id="different-ways-to-program">Different ways to program</h1>
+<p>In programming terminology, different ways to program are known as paradigms. The most intuitive in my opinion
+is procedural, imperative programming, which is what you have probably been using.</p>
+<ul>
+<li>Imperative: concerned with the &quot;how&quot; of the program</li>
+<li>Procedural: oriented towards programming-style functions. It is a sub-paradigm of imperative.
+There&#39;s also object-oriented programming, which is quite common too.</li>
+<li>Object-oriented programming: oriented towards &quot;objects.&quot; It is a sub-paradigm of imperative.
+And there are declarative programming sub-paradigms, such as functional and markup.</li>
+<li>Declarative: concerned with the &quot;what&quot; of the program.</li>
+<li>Functional: oriented towards mathematical-style functions and immutable variables. It is a sub-paradigm of declarative.</li>
+<li>Markup: used to show meaningful imagery.<br>This book mainly focuses on imperative programming, and I suggest you stick to it for now.
+It&#39;s not in the scope of this book to discuss at length programming paradigms, but if any interest you at some point,
+then do search them up.<h1 id="the-art-of-googling">The Art of Googling</h1>
+What really is googling? To keep Google happy, I define googling as the use of the Google search engine to get
+information on any subject. And programmers google a lot more than you&#39;d think. In fact, googling is the most
+important skill for a programmer to have. You google to learn a new programming language, a new library, to figure
+out what&#39;s wrong with your code, to find help and so much more. So, how do you google effectively? Googling is a skill
+that can be cultivated over years of experience. But the good news is, because you aren&#39;t <em>yet</em> a skilled googler,
+you can boost your skill quickly. How do you do that? By using the google search modifiers syntax. They
+might have their own name, but I&#39;ll just use this. &quot;Syntax&quot; simply means the way something is written. Collectively,
+English&#39;s syntax is composed of its grammar, punctuation, vocabulary, etc.
+<img src="https://raw.githubusercontent.com/VideoCarp/website/gh-pages/readables/CCE0F897-D8EE-4D65-B998-77F5E14CEDBE.jpeg" alt="">
+I got this image straight from <a href="https://support.google.com/websearch/answer/2466433?hl=en">Google</a>, and you can
+see them there if you&#39;d like. This image does not show all search modifiers, but I doubt you&#39;re going to be
+looking at social media for answers to your programming problems, save for Reddit. Do you ever find that when you&#39;re
+searching for something, you keep getting unrelated results? Or perhaps Google ignores some of your search query?
+Both these are problems I frequently encounter while searching. But the solution&#39;s easy. If you don&#39;t want Google
+to ignore some words in your search query, wrap it in quotes, like this <code>&quot;GitHub pages&quot;</code>. This will only return results
+that have the text &quot;GitHub pages&quot; exactly; the word GitHub has to follow the word pages. If you just want results
+that contain both, then use the search query <code>&quot;GitHub&quot; &quot;Pages&quot;</code>. Let&#39;s say you keep searching for stack exchange,
+i.e.: exchanging a stack. This is a model for search queries you&#39;re likely to make if you forget some terms. You&#39;ll
+keep getting results from StackExchange, the website and other websites that talk about it. So, now you try
+<code>exchanging a stack</code>. Alas, that changes nothing. A good idea here is to eliminate results containing &quot;StackExchange.&quot;
+So, to your new search query, add <code>-stackexchange</code>. And now, you&#39;ve found your result: swapping stacks.
+Googling is tough. But here&#39;s a short, simple list on when you should use certain search modifiers and techniques.</li>
+<li>Quotes: when you have an error. Be careful not to include the part where it says where the error happened
+in your code, though.</li>
+<li>Minus: When you keep getting a result you don&#39;t want.</li>
+<li><code>site:foo.bar</code>: when you want to find an answer to a question that you lost.</li>
+<li><code>before:date</code> and <code>after:date</code>: when the results you get are useless because they&#39;re too new or too old.
+<strong>What websites to look for:</strong><br>It depends on the programming language you&#39;re using. But for most programming languages, try to find StackOverflow
+answers, GitHub projects or issues, and really any website you find.</li>
+</ul>
+<h1 id="picking-a-programming-language">Picking a programming language</h1>
+<p>This is a hole a lot of emerging programmers fall into, they just can&#39;t pick which language to get started. Well,
+I&#39;m here to help with that. Picking a language is hard, because there are so many options. &quot;I wanna do JavaScript,
+so I can do web development, but I don&#39;t like the language.&quot; Or &quot;I wanna do Python because it has great libraries,
+but I don&#39;t like it.&quot;
+Lots and lots of things like that. The real answer is, it honestly doesn&#39;t matter what your first language is.
+I tried starting with JavaScript, but I found it too confusing and ended up starting with Python. To this day,
+Python is the language I know most. But learning it was really difficult. At some point, I decided why don&#39;t I also
+learn other programming languages? So I tried. It was hard, but a lot easier. And now, I found learning Haskell,
+regarded as a difficult programming language, quite easy.<br>What I mean to say here, is you should start with whatever programming language you lean towards, even if you have
+doubts about it.<br><strong>My controversial opinions:</strong><br>I have some rather controversial opinions about which programming language to start with. This is the nature
+of anyone helping others pick a language to start with. I recommend beginning with a simple programming language,
+like Python, Lua, or Ruby. Start with a dynamically typed programming language, because types are a difficult
+concept. Don&#39;t start with something like C#, Java or C++. C# and Java require you to understand object-oriented
+programming, which is a difficult concept for beginners and is highly controversial in the programming community.
+And they&#39;re both just simply hard. C++ is <em>very</em> difficult in comparison to other languages, too. My advice
+would be to start with a simple language, like one of the three I listed, and then if you want to, work your way
+to more difficult languages. In truth, you don&#39;t always need to use difficult programming languages. You might hear
+that Python and Ruby are slow. And that&#39;s absolutely true. They are slow. But in most cases, it doesn&#39;t matter.
+And Lua&#39;s really fast with LuaJIT, although Lua is not very popular. There are plenty of fast, simple programming
+languages, like Go, Julia and more. But unless you like their syntax, I&#39;d begin with the simplest language
+I can find.<br>Obviously, this doesn&#39;t mean begin with HTML &amp; CSS, because they&#39;re markup languages and likely
+won&#39; help you understand others. Not to mention they&#39;re pretty frustrating compared to other code.</p>
+<h5 id="picking-a-paradigm">Picking a paradigm</h5>
+<p>Another hole programmers often fall into is choosing a paradigm. My advice is to do what you like. Do
+procedural programming if you like it, do object-oriented programming if you like it. But I&#39;ll try to give
+an overview of the advantages and disadvantages of some of the most popular paradigms.</p>
+<p><strong>Procedural:</strong><br>Advantages:  </p>
+<ul>
+<li>Intuitive and simple</li>
+<li>Widely supported<br>Disadvantages:</li>
+<li>Rare for some fields, like GUI.  </li>
+</ul>
+<p><strong>Object-oriented:</strong>
+Advantages:</p>
+<ul>
+<li>Used for GUI</li>
+<li>Good for making libraries</li>
+<li>Popular<br>Disadvantages:</li>
+<li>Complex</li>
+<li>Clutters code (verbose)  </li>
+</ul>
+<p><strong>Functional:</strong><br>Advantages:</p>
+<ul>
+<li>Very easy to debug</li>
+<li>Concise<br>Disadvantages:</li>
+<li>Complex to get started.</li>
+<li>Less widely supported.<br>A lot of people will disagree with me here. I ignored any advantage or disadvantage that pops up in all 3.
+My advice would be to begin with procedural. It&#39;s really the simplest. Then you can dive into one of the other
+paradigms once you&#39;re experienced enough.  </li>
+</ul>
+<p><strong>In summary: pick what you like and don&#39;t worry about it.</strong></p>
+<h1 id="fields-to-program-in">Fields to program in</h1>
+<p>I&#39;ll just list a few popular programming topics.</p>
+<ul>
+<li>App development: GUI (generally object-oriented, but you <em>can</em> use other paradigms).</li>
+<li>Web development: Frontend (what the user sees) and backend (managing the server and taking requests from the frontend)</li>
+<li>Algorithms and data structures: I really can&#39;t explain it, so search it up.</li>
+<li>Parsing: breaking down language into meaningful units (I have a guide on this in my website).</li>
+<li>Concurrency: dealing with multiple programs running at the same time.<br>and many more. It again depends on the language.</li>
+</ul>
