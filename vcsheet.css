@@ -79,6 +79,13 @@ yellowify {
 blockquote {
   background-color: #0047AB;
   color: #fff;
+  padding: 3px;
+}
+
+details {
+  background-color: #000;
+  color: #fff;
+  padding: 3px;
 }
 
 body {
