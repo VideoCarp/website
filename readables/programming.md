@@ -201,9 +201,9 @@ Lots and lots of things like that. The real answer is, it honestly doesn't matte
 I tried starting with JavaScript, but I found it too confusing and ended up starting with Python. To this day,
 Python is the language I know most. But learning it was really difficult. At some point, I decided why don't I also
 learn other programming languages? So I tried. It was hard, but a lot easier. And now, I found learning Haskell,
-regarded as a difficult programming language, quite easy. 
+regarded as a difficult programming language, quite easy.  
 What I mean to say here, is you should start with whatever programming language you lean towards, even if you have
-doubts about it.
+doubts about it.  
 **My controversial opinions:**  
 I have some rather controversial opinions about which programming language to start with. This is the nature
 of anyone helping others pick a language to start with. I recommend beginning with a simple programming language,
@@ -216,7 +216,8 @@ to more difficult languages. In truth, you don't always need to use difficult pr
 that Python and Ruby are slow. And that's absolutely true. They are slow. But in most cases, it doesn't matter.
 And Lua's really fast with LuaJIT, although Lua is not very popular. There are plenty of fast, simple programming
 languages, like Go, Julia and more. But unless you like their syntax, I'd begin with the simplest language
-I can find. Obviously, this doesn't mean begin with HTML & CSS, because they're markup languages and likely
+I can find.  
+Obviously, this doesn't mean begin with HTML & CSS, because they're markup languages and likely
 won' help you understand others. Not to mention they're pretty frustrating compared to other code.
 
 ##### Picking a paradigm
@@ -250,7 +251,9 @@ Disadvantages:
 * Less widely supported.  
 A lot of people will disagree with me here. I ignored any advantage or disadvantage that pops up in all 3.
 My advice would be to begin with procedural. It's really the simplest. Then you can dive into one of the other
-paradigms once you're experienced enough.
+paradigms once you're experienced enough.  
+
+**In summary: pick what you like and don't worry about it.**
 
 # Fields to program in
 I'll just list a few popular programming topics.
