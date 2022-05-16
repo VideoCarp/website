@@ -1,0 +1,61 @@
+<p>If you&#39;ve been trying to get into functional programming, there&#39;s a good chance you&#39;ve heard of composition and piping.
+These concepts apply to point-free programming. This is an attempt at a simple, clear explanation of function composition
+and piping. I will write these examples in F#, but the concepts apply to other languages like Haskell. They just use
+different operators sometimes.</p>
+<p><strong>Prerequisites</strong>: basic programming knowledge. This explanation is going to be simple.</p>
+<p><strong>Piping</strong><br>Let&#39;s begin with the simpler of the two (at least according to my experience): piping. There are two ways which you could
+pipe a value to a function. Forwards, and backwards. When you pipe forward, you are applying the left side of the forward
+pipe to the leftmost argument of the right side of the pipe.
+In F#, piping forward is done with the <code>|&gt;</code> operator.
+This means that</p>
+<pre><code class="lang-fsharp"><span class="hljs-string">"Hello World!"</span> |&gt; printfn <span class="hljs-string">"%s"</span>
+<span class="hljs-comment">// is the same as</span>
+printfn <span class="hljs-string">"%s"</span> <span class="hljs-string">"Hello World!"</span>
+<span class="hljs-comment">// Another example would be</span>
+let add1 x = x + <span class="hljs-number">1</span>
+<span class="hljs-number">5</span> |&gt; add1
+<span class="hljs-comment">// is the same as</span>
+add1 <span class="hljs-number">5</span>
+<span class="hljs-comment">// And</span>
+let add x y = x + y
+<span class="hljs-number">5</span> |&gt; (<span class="hljs-number">1</span> |&gt; add) <span class="hljs-comment">// 6</span>
+<span class="hljs-comment">// Parentheses are used to clarify precende (order)</span>
+</code></pre>
+<p>It simply applies the something to the first <em>unfilled</em> argument (if you read from left to right).
+In Haskell, the operator used for this is <code>&amp;</code>.
+Piping backwards may be clear to you now. It&#39;s the same thing, but it&#39;s read from right to left.
+In F#, backward pipes are done with the <code>&lt;|</code> operator.
+For example,</p>
+<pre><code class="lang-fsharp">let subtract x y = x - y
+subtract &lt;| <span class="hljs-number">5</span> &lt;| <span class="hljs-number">1</span> <span class="hljs-comment">// 4</span>
+subtract <span class="hljs-number">5</span> <span class="hljs-number">1</span> <span class="hljs-comment">// 4</span>
+</code></pre>
+<p>In Haskell, this is done with <code>$</code>.</p>
+<p><strong>Composition</strong><br>Function composition is a <em>lot</em> simpler than it may seem. It&#39;s the creation of a function that applies a function to
+the result of another. In F#, composition is done with <code>&gt;&gt;</code> and <code>&lt;&lt;</code>. Like piping, <code>&gt;&gt;</code> is read left to right and <code>&lt;&lt;</code> is read
+right to left.</p>
+<pre><code class="lang-fsharp"><span class="hljs-symbol">let</span> <span class="hljs-keyword">add1 </span>x = x + <span class="hljs-number">1</span>
+<span class="hljs-symbol">let</span> <span class="hljs-keyword">multiplyBy5 </span>x = x * <span class="hljs-number">5</span>
+<span class="hljs-symbol">let</span> <span class="hljs-keyword">addThenMultiply </span>x = (<span class="hljs-keyword">add1 </span>&gt;&gt; <span class="hljs-keyword">multiplyBy5) </span>x
+<span class="hljs-symbol">printfn</span> <span class="hljs-string">"%d"</span> (<span class="hljs-keyword">addThenMultiply </span><span class="hljs-number">4</span>) // <span class="hljs-number">25</span>
+<span class="hljs-symbol">printfn</span> <span class="hljs-string">"%d"</span> (<span class="hljs-keyword">multiplyBy5 </span>(<span class="hljs-keyword">add1 </span><span class="hljs-number">4</span>)) // <span class="hljs-number">25</span>
+</code></pre>
+<p>In Haskell, <code>.</code> is used for function composition.</p>
+<p><strong>Why bother?</strong><br>A fair question you might have is, why bother piping and composing functions? Well, piping and composition helps us
+clear up our code of explicit rules for parentheses. Consider the example for composition. The first one is easier to read.
+And if we reuse it, we save on writing extra code. It makes things easier. And what about piping? Piping has the same applications.
+Would you prefer <code>Seq.toList numbers |&gt; Seq.iter (printfn &quot;%d&quot;)</code> or <code>Seq.iter (printfn &quot;%d&quot; (Seq.toList numbers))</code>?
+Maybe you&#39;d prefer the latter. But it&#39;s more idiomatic to use composition and piping sometimes.
+And sometimes, there&#39;s a function with a long list of arguments you need to supply, with long names.
+Would you prefer</p>
+<pre><code class="lang-fsharp">AVeryLongFunction VeryLongArgument1 VeryLongArgument2 (<span class="hljs-name">x</span> VeryLongArgument3AppliedToX) (<span class="hljs-name">VeryLongFunctionName</span> VeryLongArgument4AppliedToVeryLongFunctionApplied)
+</code></pre>
+<p>or</p>
+<pre><code class="lang-fsharp">VeryLongArgument1
+<span class="hljs-string">|&gt; VeryLongArgument2</span>
+<span class="hljs-string">|&gt; (X VeryLongArgument3AppliedToX)</span>
+<span class="hljs-string">|&gt; (VeryLongFunctionName VeryLongArgument4AppliedToVeryLongFunctionName)</span>
+<span class="hljs-string">|&gt; AVeryLongFunction</span>
+</code></pre>
+<p>There are cases where this does happen. Just look at some examples using Avalonia.FuncUI.
+There, we are saved by the piping operators.</p>
