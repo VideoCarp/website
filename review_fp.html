@@ -1,0 +1,44 @@
+<h1 id="reviewing-functional-programming">Reviewing functional programming</h1>
+<p>Here, I&#39;ll cover review functional programming according to my experience when I tried it. I&#39;ll cover what advantages there are
+and what disadvantages there are. My struggles, and what I found easier, and finally a conclusion. This is not a scientific
+paper, and is based solely on developer experience, it&#39;s more useful if you&#39;re trying to understand developer experience.
+Hopefully, this will help you decide whether or not to try functional programming.<br>So, I originally started programming in general procedurally, with Python. It&#39;s important to note that functional programming
+and object oriented programming are not the only two paradigms -- contrary to popular belief. 
+Procedural programming is largely very different to functional programming, so do keep that in mind.  </p>
+<p>When I started functional programming, I started with F#. I was careful to avoid imperative structures like control flow. And when I began, it was
+obviously quite difficult, but I felt the same way as when I started programming in general. It changed my thinking.
+And it will most likely change yours. If the well of programming seems dry to you, functional programming can be like rain.</p>
+<p>Initially, functional programming was significantly harder to me than imperative programming, because I honestly didn&#39;t
+understand functional programming and my mind hadn&#39;t yet adapted. I found it difficult to deal with there being no variables
+-- there are immutables, but I find using &#39;variable&#39; misleading when they cannot be varied. And it seemed impossible to iterate
+when I shouldn&#39;t use loops.  </p>
+<p>After some practice, I caught the idea of using recursion to repeat and the parameters of a function as control 
+&quot;varianles.&quot; Things started becoming a lot clearer, and immutability wasn&#39;t so much a burden anymore. It felt different to
+writing imperative code... but what&#39;s the point?</p>
+<p>I decided to write a lexer -- not important for you to understand -- functionally, because I had always used them to learn
+new programming languages. This task was always hard for me to do, until I tried doing it functionally.</p>
+<p>I explored other functional programming languages like Haskell, and Haskell was a lot easier than most people call it out
+to be. And I explored the Lisp language family. I didn&#39;t have any practical uses for these, but they were still nice.</p>
+<p>It also filled a lot of gaps I had when doing imperative programming. A lot of imperative or multi-paradigm languages,
+like Rust, Python or CoffeeScript had functional features I didn&#39;t know about, that were quite useful. It helped me
+understand <code>None</code> and <code>Some</code>, <code>map</code> and <code>filter</code>.</p>
+<p>Nonetheless, some tasks <em>were</em> harder in functional programming, like using a hashmap or dictionary to keep track of things.
+And I had a concern: the memory cost of recursion. But this was <em>never</em> a limitation. The CPU usage was lower, though
+and you might chalk this up to language, but in most benchmarks, functional programming can be slightly slower, but use
+significantly less of the CPU.</p>
+<h2 id="summary">Summary</h2>
+<h3 id="the-good">The good</h3>
+<ul>
+<li>Rejuvenating and eye-opening</li>
+<li>Often easier to reason about</li>
+<li>Interesting</li>
+</ul>
+<h3 id="the-bad">The bad</h3>
+<ul>
+<li>Sometimes more complicated</li>
+<li>Recursion RAM usage (which was never necessary to worry about)</li>
+</ul>
+<h2 id="should-you-try-functional-programming-">Should you try functional programming?</h2>
+<p>Yes, you should. Unless you have time constraints, functional programming can be enlightening. And it&#39;s not like you <em>have</em>
+to use it. You can learn the philosophy, at the very least.
+I&#39;m not here to claim it&#39;s superior or inferior to <em>use</em>, I&#39;m here to voice my opinion on whether it&#39;s worth a try.</p>
