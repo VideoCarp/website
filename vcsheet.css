@@ -55,6 +55,11 @@ code {
     background-color: #fff;
     color: #000;
     border-style: inset;
+}
+pre code {
+    background-color: #fff;
+    color: #000;
+    border-style: inset;
     border-radius: 5px;
     display: block;
 }
