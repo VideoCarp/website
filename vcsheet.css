@@ -53,8 +53,10 @@ a {
 
 code {
     background-color: #fff;
-    color: #013220;
+    color: #000;
     border-style: inset;
+    border-radius: 5px;
+    display: block;
 }
 
 
@@ -102,6 +104,6 @@ a.button {
 
 img {
     max-width: 100%;
-    width: 100px;
+    width: auto;
     height: auto;
 }
