@@ -1,16 +1,17 @@
 <link rel="stylesheet" href="vcsheet.css">
 <a href="https://videocarp.github.io/website/" class="button">Home</a>
-
 <title>The Beginner's guide to Lexical Analysis</title>
 <p><img src="https://img.shields.io/badge/reading%20time-9%20min%2C%203%20sec-yellowgreen" alt=""></p>
 <h1 id="lexing-for-beginners">Lexing for beginners</h1>
-<p>This is a guide that should teach you how to perform basic lexing in a functional programing language.\
-Everything was written in Elixir, but you should be able to follow it if you are using any functional programming language.\
-Or even an imperative programming language like Python, C or Java.\</p>
+<p>This is a guide that should teach you how to perform basic lexing in a functional programing language. 
+    Everything was written in Elixir, but you should be able to follow it if you are using any functional programming language. 
+    Or even an imperative programming language like Python, C or Java. 
+</p>
 <h1 id="what-is-lexing-">What is lexing?</h1>
-<p>The first question you should ask yourself is, what is lexing? It&#39;s the same as tokenising, scanning or lexical analysis.\
-That might not help you if you haven&#39;t heard of these either. <strong>Put simply, lexing is the process of breaking down a string\
-into meaningful units, indepdendent of context.</strong> What a lexer will do is make the following happen:</p>
+<p>The first question you should ask yourself is, what is lexing? It&#39;s the same as tokenising, scanning or lexical analysis. 
+    That might not help you if you haven&#39;t heard of these either. <strong>Put simply, lexing is the process of breaking down a string 
+    into meaningful units, indepdendent of context.</strong> What a lexer will do is make the following happen:
+</p>
 <pre><code class="lang-elixir"><span class="hljs-comment"># Turn this:</span>
 <span class="hljs-comment"># out("Hello World!")</span>
 <span class="hljs-comment"># into this</span>
@@ -21,38 +22,42 @@ into meaningful units, indepdendent of context.</strong> What a lexer will do is
     {<span class="hljs-string">")"</span>, <span class="hljs-symbol">:cparen</span>}
 ]
 </code></pre>
-<p>To further help you understand what lexing really is, take a look at this diagram.\
-<strong>Don&#39;t worry if you don&#39;t understand the terms used.</strong>
-<img src="https://user-images.githubusercontent.com/66365570/162650135-d2e0abf1-a6fc-4a02-b92b-1a7ee10354e3.png" alt="702430A0-1D90-419F-B615-455199B20EAC">
-If you still don&#39;t understand lexing, think of it in this way: you have a sentence in English.\
-It&#39;s &quot;Lexing is not easy, but it&#39;s possible.&quot;\
-You can break this sentence down into its words, &quot;lexing&quot;, &quot;is&quot;, &quot;not&quot;, &quot;easy&quot;, &quot;,&quot;, &quot;but&quot;, &quot;it&quot;, &quot;&#39;s&quot;, &quot;possible&quot;.\
-And then you can categorise each word. Like adjectives, verbs, etc.\</p>
+<p>To further help you understand what lexing really is, take a look at this diagram. 
+    <strong>Don&#39;t worry if you don&#39;t understand the terms used.</strong>
+    <img src="https://user-images.githubusercontent.com/66365570/162650135-d2e0abf1-a6fc-4a02-b92b-1a7ee10354e3.png" alt="702430A0-1D90-419F-B615-455199B20EAC">
+    If you still don&#39;t understand lexing, think of it in this way: you have a sentence in English. 
+    It&#39;s &quot;Lexing is not easy, but it&#39;s possible.&quot; 
+    You can break this sentence down into its words, &quot;lexing&quot;, &quot;is&quot;, &quot;not&quot;, &quot;easy&quot;, &quot;,&quot;, &quot;but&quot;, &quot;it&quot;, &quot;&#39;s&quot;, &quot;possible&quot;. 
+    And then you can categorise each word. Like adjectives, verbs, etc. 
+</p>
 <ul>
-<li>Lexing can be done on any language, from English to C.\</li>
-<li>Lexers don&#39;t care about most errors, and they can only handle a few.</li>
-<li>When developing a programming language, lexical analysis is the first step taken.</li>
-<li>Lexing allows graphemes (characters) to be morphed into morphemes (small units of meaning).</li>
+    <li>Lexing can be done on any language, from English to C. </li>
+    <li>Lexers don&#39;t care about most errors, and they can only handle a few.</li>
+    <li>When developing a programming language, lexical analysis is the first step taken.</li>
+    <li>Lexing allows graphemes (characters) to be morphed into morphemes (small units of meaning).</li>
 </ul>
 <h1 id="why-lex-">Why lex?</h1>
-<p>Why would you ever need to break down a string into meaningful units? And why do this process when I can just use\
-regex with <code>split</code> functions?\
-The answer to that question depends on what you&#39;re trying to do, and why. Generally, regex is <em>much</em> slower than by hand lexing,\
-you have to follow its rules and it&#39;s less powerful than doing this by hand. Furthermore, lexing is a great exercise.\
-In fact, once you understand lexing, you&#39;ll understand all language a little more.
-Should you lex? I recommend you do if you are writing a language or analysing one. But if you feel like you should lex,\
-then do it. </p>
+<p>Why would you ever need to break down a string into meaningful units? And why do this process when I can just use 
+    regex with <code>split</code> functions? 
+    The answer to that question depends on what you&#39;re trying to do, and why. Generally, regex is <em>much</em> slower than by hand lexing, 
+    you have to follow its rules and it&#39;s less powerful than doing this by hand. Furthermore, lexing is a great exercise. 
+    In fact, once you understand lexing, you&#39;ll understand all language a little more.
+    Should you lex? I recommend you do if you are writing a language or analysing one. But if you feel like you should lex, 
+    then do it. 
+</p>
 <h1 id="important">IMPORTANT</h1>
-<p>I highly recommend you do not directly copy and paste any pieces of code. It will hinder your learning. If you want to change anything,\
-then do it. Play around with the functions and if you are wondering anything, try it and see.</p>
+<p>I highly recommend you do not directly copy and paste any pieces of code. It will hinder your learning. If you want to change anything, 
+    then do it. Play around with the functions and if you are wondering anything, try it and see.
+</p>
 <h1 id="how-to-lex-">How to lex?</h1>
 <h2 id="theory">Theory</h2>
-<p>I&#39;ll begin by discussing some theory behind lexing. A lexer is supposed to somehow understand what things are meaningful units\
-of language, which can seem easy at first, but later seems near impossible. The first thing to discuss is that there is no universal\
-tokenisation model, as long as it is efficient and generates the desired output, your lexer should be fine.\
-So, let&#39;s try lexing the following:
-<code>number += sqrt(16)</code>
-We want this to become something like</p>
+<p>I&#39;ll begin by discussing some theory behind lexing. A lexer is supposed to somehow understand what things are meaningful units 
+    of language, which can seem easy at first, but later seems near impossible. The first thing to discuss is that there is no universal 
+    tokenisation model, as long as it is efficient and generates the desired output, your lexer should be fine. 
+    So, let&#39;s try lexing the following:
+    <code>number += sqrt(16)</code>
+    We want this to become something like
+</p>
 <pre><code class="lang-elixir">[
     {<span class="hljs-string">"number"</span>, <span class="hljs-symbol">:identifier</span>},
     {<span class="hljs-string">"+="</span>, <span class="hljs-symbol">:assignment</span>},
@@ -62,30 +67,37 @@ We want this to become something like</p>
     {<span class="hljs-string">")"</span>, <span class="hljs-symbol">:cparen</span>}
 ]
 </code></pre>
-<p>This is a <em>list</em> composed of <em>tuples</em>. On the left hand side is the raw unit of meaning, and on the right is its category.\
-I&#39;ll call them the token and tag, respectively. The tag is of the type <code>atom</code>, which you don&#39;t need to worry about.\
-A scanner will work perfectly fine, had they been strings instead. In this case, I just preferred using atoms.\</p>
+<p>This is a <em>list</em> composed of <em>tuples</em>. On the left hand side is the raw unit of meaning, and on the right is its category. 
+    I&#39;ll call them the token and tag, respectively. The tag is of the type <code>atom</code>, which you don&#39;t need to worry about. 
+    A scanner will work perfectly fine, had they been strings instead. In this case, I just preferred using atoms. 
+</p>
 <h3 id="terminology">Terminology</h3>
 <ul>
-<li>Identifier
-An identifier is things like a variable or a function name. They are referencing something.</li>
-<li>Assignment
-An assignment just means that this is an operator that is used to assign a value. An operator is a symbol placed between\
-identifiers or values to do something.</li>
-<li>Oparen
-Oparen is short for &quot;opening parentheses.&quot; Parentheses are &quot;(&quot; and &quot;).&quot; </li>
-<li>Cparen
-Cparen is short for &quot;closing parentheses.&quot;<h2 id="writing-code">Writing code</h2>
-The next step is to implement the lexer. Because this is a guide using a functional programming language, Elixir, recursion will\
-be used rather than looping. But don&#39;t worry if you&#39;re an imperative developer, I actually found it easier to use recursion\
-for lexing than loops. I&#39;d recommend lexing with a functional programming language if you are using this guide. You can easily\
-link it to whatever language your main program will use with files.\
-Recursion, simply, is when a function calls itself. When a function calls itself, it goes back to the start of the function,\
-much like a <code>continue</code> in a loop.</li>
+    <li>Identifier
+        An identifier is things like a variable or a function name. They are referencing something.
+    </li>
+    <li>Assignment
+        An assignment just means that this is an operator that is used to assign a value. An operator is a symbol placed between 
+        identifiers or values to do something.
+    </li>
+    <li>Oparen
+        Oparen is short for &quot;opening parentheses.&quot; Parentheses are &quot;(&quot; and &quot;).&quot; 
+    </li>
+    <li>
+        Cparen
+        Cparen is short for &quot;closing parentheses.&quot;
+        <h2 id="writing-code">Writing code</h2>
+        The next step is to implement the lexer. Because this is a guide using a functional programming language, Elixir, recursion will 
+        be used rather than looping. But don&#39;t worry if you&#39;re an imperative developer, I actually found it easier to use recursion 
+        for lexing than loops. I&#39;d recommend lexing with a functional programming language if you are using this guide. You can easily 
+        link it to whatever language your main program will use with files. 
+        Recursion, simply, is when a function calls itself. When a function calls itself, it goes back to the start of the function, 
+        much like a <code>continue</code> in a loop.
+    </li>
 </ul>
-<p>Elixir requires all functions to be in modules. So that&#39;s where we&#39;ll begin.\</p>
+<p>Elixir requires all functions to be in modules. So that&#39;s where we&#39;ll begin. </p>
 <pre><code class="lang-elixir">defmodule Lexer <span class="hljs-keyword">do</span>
-    <span class="hljs-keyword">def</span> lex(<span class="hljs-keyword">current</span> \\ <span class="hljs-number">0</span>, tokenstream \\ [], <span class="hljs-keyword">len</span>, input_str) <span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">def</span> lex(<span class="hljs-keyword">current</span>    <span class="hljs-number">0</span>, tokenstream    [], <span class="hljs-keyword">len</span>, input_str) <span class="hljs-keyword">do</span>
         <span class="hljs-built_in">char</span> = String.at(input_str, <span class="hljs-keyword">current</span>)
         unless <span class="hljs-keyword">current</span> &gt;= <span class="hljs-keyword">len</span> <span class="hljs-keyword">do</span>
             cond <span class="hljs-keyword">do</span>
@@ -97,35 +109,38 @@ much like a <code>continue</code> in a loop.</li>
     <span class="hljs-keyword">end</span>
 <span class="hljs-keyword">end</span>
 </code></pre>
-<p>This may not make sense just yet, so I&#39;ll explain every line here.\
-<code>defmodule Lexer do</code>: this defines the &quot;Lexer&quot; module. Be absolutely sure you <strong>name your module in uppercase</strong>,\
-otherwise everything will break.\
-<code>def lex(current \\ 0, tokenstream \\ [], len, input_str) do</code>: this line defines the lex function and its parameters.\
-The <code>\\</code> sets the default arguments for each parameter in Elixir. The <code>current</code> variable is the index on the program\
-the user inputs, which is <code>input_str</code>. <code>len</code> is the length of <code>input_str</code>. 
-<code>char = String.at(input_str, current)</code>: this line defines the <code>char</code> variable. This variable is the substring which we are\
-testing conditions for. <code>String.at(input_str, current)</code> is equivalent to <code>input_str[current]</code> in other language such as\
-Python.
-<code>unless current &gt;= len do</code>: unless <code>current</code> is greater than <code>len</code>, do the following. This is equivalent to <code>if !(current &gt;= len)</code>\
-or <code>if not (current &gt;= len)</code> in other languages. This is crucial because it ensures that recursion only happens when it needs to.\
-This effectively means if the string has not been exhausted.\
-<code>cond do</code>: this is a block of code that can have conditions attached to it. This is an equivalent of a block of <code>if</code>s and <code>else if</code>s.\
-<code>...</code>: this means that we&#39;ll fill this section later.</p>
+<p>This may not make sense just yet, so I&#39;ll explain every line here. 
+    <code>defmodule Lexer do</code>: this defines the &quot;Lexer&quot; module. Be absolutely sure you <strong>name your module in uppercase</strong>, 
+    otherwise everything will break. 
+    <code>def lex(current    0, tokenstream    [], len, input_str) do</code>: this line defines the lex function and its parameters. 
+    The <code>  </code> sets the default arguments for each parameter in Elixir. The <code>current</code> variable is the index on the program 
+    the user inputs, which is <code>input_str</code>. <code>len</code> is the length of <code>input_str</code>. 
+    <code>char = String.at(input_str, current)</code>: this line defines the <code>char</code> variable. This variable is the substring which we are 
+    testing conditions for. <code>String.at(input_str, current)</code> is equivalent to <code>input_str[current]</code> in other language such as 
+    Python.
+    <code>unless current &gt;= len do</code>: unless <code>current</code> is greater than <code>len</code>, do the following. This is equivalent to <code>if !(current &gt;= len)</code> 
+    or <code>if not (current &gt;= len)</code> in other languages. This is crucial because it ensures that recursion only happens when it needs to. 
+    This effectively means if the string has not been exhausted. 
+    <code>cond do</code>: this is a block of code that can have conditions attached to it. This is an equivalent of a block of <code>if</code>s and <code>else if</code>s. 
+    <code>...</code>: this means that we&#39;ll fill this section later.
+</p>
 <pre><code class="lang-elixir"><span class="hljs-keyword">else</span>
     tokenstream
 </code></pre>
 <p>This is not a single line. But this is the <code>else</code> block for the <code>unless</code>. This means that this code will execute once the string
-has been exhausted. And we return <code>tokenstream</code>. In Elixir, the last expression&#39;s return value is what the function will return.\
-In other words, it&#39;s the same as <code>return tokenstream</code> in other languages.\
-The rest are <code>end</code>s. These terminate blocks. They are equivalent to unindenting in Python or <code>}</code> in a lot of languages.</p>
+    has been exhausted. And we return <code>tokenstream</code>. In Elixir, the last expression&#39;s return value is what the function will return. 
+    In other words, it&#39;s the same as <code>return tokenstream</code> in other languages. 
+    The rest are <code>end</code>s. These terminate blocks. They are equivalent to unindenting in Python or <code>}</code> in a lot of languages.
+</p>
 <h3 id="adding-helper-functions">Adding helper functions</h3>
-<p>In most programming languages, identifiers are defined using the English alphabet, numbers and <code>_</code>, numbers are written as the\
-Hindu-Arabic numerals (0, 1, 2, etc.) and strings are written using quotes. Functions are called with parentheses, and so on.\
-Elixir allows using <code>?</code> in identifiers. And the magic that makes this happen, is of course in part the tokeniser.\
-To allow you to tweak and debug your lexer easily, as well as be more concise, helper functions are ideal.\
-So, what is a helper function? In this context, a helper function is a function that takes as input a character and returns a boolean.\
-It checks for a condition using the character. These are easily the simplest part of the scanner.\
-I&#39;ll start with a few helper functions, and more will be added. Nest these functions in the lexer module.</p>
+<p>In most programming languages, identifiers are defined using the English alphabet, numbers and <code>_</code>, numbers are written as the 
+    Hindu-Arabic numerals (0, 1, 2, etc.) and strings are written using quotes. Functions are called with parentheses, and so on. 
+    Elixir allows using <code>?</code> in identifiers. And the magic that makes this happen, is of course in part the tokeniser. 
+    To allow you to tweak and debug your lexer easily, as well as be more concise, helper functions are ideal. 
+    So, what is a helper function? In this context, a helper function is a function that takes as input a character and returns a boolean. 
+    It checks for a condition using the character. These are easily the simplest part of the scanner. 
+    I&#39;ll start with a few helper functions, and more will be added. Nest these functions in the lexer module.
+</p>
 <pre><code class="lang-elixir">def numeric(<span class="hljs-built_in">char</span>) <span class="hljs-keyword">do</span>
     <span class="hljs-built_in">char</span> &gt;= <span class="hljs-string">"0"</span> &amp;&amp; <span class="hljs-built_in">char</span> &lt;= <span class="hljs-string">"9"</span> <span class="hljs-comment"># Characters are just organized conveniently. &amp;&amp; means "and."</span>
     <span class="hljs-comment"># This function tells us if "char" is a number. It obviously doesn't cover floating point numbers,</span>
@@ -145,31 +160,37 @@ def arithmetic(<span class="hljs-built_in">char</span>) <span class="hljs-keywor
     <span class="hljs-comment"># if it is in that list.</span>
 <span class="hljs-keyword">end</span>
 </code></pre>
-<p>There are explanations on what each of these functions does and how. But these are a foundation for the basic lexical rules\
-of the language. Be sure to nest these in the <code>Lexer</code> module, so that they&#39;re local and accessible by the <code>Lexer.lex</code> function.</p>
+<p>There are explanations on what each of these functions does and how. But these are a foundation for the basic lexical rules 
+    of the language. Be sure to nest these in the <code>Lexer</code> module, so that they&#39;re local and accessible by the <code>Lexer.lex</code> function.
+</p>
 <h3 id="simple-symbol-lexing-">Simple symbol lexing.</h3>
-<p>So now you have the tools to easily identify where each character belongs. You don&#39;t need to use these helper functions yet.\
-But you may have noticed that symbols like &quot;(&quot; or &quot;=&quot; were not covered with the helper functions. These things are oftentimes\
-single-character tokens, so it&#39;s not worth making a function we&#39;ll never use or edit.\
-How do we add the single-character tokens with their tags into the tokenstream? The answer to this is simple: by checking a condition\
-and performing recursion. What will be done is that when one of these is encountered, <code>lex</code> will be called with new arguments.\
-Remember the arguments to <code>lex</code>? They were <code>current</code>, <code>tokenstream</code>, <code>len</code>, <code>input_str</code>. It may not make sense that our lexer\
-function wants to take its own output as an argument to an imperative programmer. However, it&#39;s a crucial part of using recursion\
-with immutable variables effectively for lexing. What we&#39;ll do is call the <code>lex</code> function again when we spot one of these single-\
-character tokens. </p>
+<p>So now you have the tools to easily identify where each character belongs. You don&#39;t need to use these helper functions yet. 
+    But you may have noticed that symbols like &quot;(&quot; or &quot;=&quot; were not covered with the helper functions. These things are oftentimes 
+    single-character tokens, so it&#39;s not worth making a function we&#39;ll never use or edit. 
+    How do we add the single-character tokens with their tags into the tokenstream? The answer to this is simple: by checking a condition 
+    and performing recursion. What will be done is that when one of these is encountered, <code>lex</code> will be called with new arguments. 
+    Remember the arguments to <code>lex</code>? They were <code>current</code>, <code>tokenstream</code>, <code>len</code>, <code>input_str</code>. It may not make sense that our lexer 
+    function wants to take its own output as an argument to an imperative programmer. However, it&#39;s a crucial part of using recursion 
+    with immutable variables effectively for lexing. What we&#39;ll do is call the <code>lex</code> function again when we spot one of these single- 
+    character tokens. 
+</p>
 <ul>
-<li><code>current</code>: receives<code>current + 1</code>, which is our cursor plus the amount of characters we went over.\</li>
-<li><code>tokenstream</code>: receives <code>[{char, :TYPE} | tokenstream]</code>. This is prepending (adding as the first element or head of a list)
-a tuple containing the character and the category. <code>:TYPE</code> means the tag. If appending is available, I highly recommend\
-it instead. In Elixir, prepending and then reversing is faster than concatenating lists, so that&#39;s what&#39;s being done here.</li>
-<li><code>len</code>: receives just <code>len</code>.</li>
-<li><code>input_str</code>: receives just <code>input_str</code>.
-\
-Let&#39;s put this in real Elixir code. Inside our <code>cond</code> block, it should now look something like this:
-```elixir<pre><code>          # single-<span class="hljs-built_in">char</span> tokens
+    <li><code>current</code>: receives<code>current + 1</code>, which is our cursor plus the amount of characters we went over. </li>
+    <li><code>tokenstream</code>: receives <code>[{char, :TYPE} | tokenstream]</code>. This is prepending (adding as the first element or head of a list)
+        a tuple containing the character and the category. <code>:TYPE</code> means the tag. If appending is available, I highly recommend 
+        it instead. In Elixir, prepending and then reversing is faster than concatenating lists, so that&#39;s what&#39;s being done here.
+    </li>
+    <li><code>len</code>: receives just <code>len</code>.</li>
+    <li>
+        <code>input_str</code>: receives just <code>input_str</code>.
+         
+        Let&#39;s put this in real Elixir code. Inside our <code>cond</code> block, it should now look something like this:
+        ```elixir
+        <pre><code>          # single-<span class="hljs-built_in">char</span> tokens
           <span class="hljs-built_in">char</span> == <span class="hljs-string">")"</span> -&gt; # <span class="hljs-keyword">if</span> the condition <span class="hljs-keyword">is</span> <span class="hljs-literal">true</span>, <span class="hljs-keyword">do</span> <span class="hljs-keyword">this</span>.
               lex(current + <span class="hljs-number">1</span>, [{<span class="hljs-built_in">char</span>, :cparen} | tokenstream], len, input_str)
-</code></pre></li>
+</code></pre>
+    </li>
 </ul>
 <pre><code>            <span class="hljs-built_in">char</span> == <span class="hljs-string">"("</span> -&gt; # <span class="hljs-keyword">if</span> the above was <span class="hljs-literal">false</span>, <span class="hljs-keyword">do</span> this instead. <span class="hljs-keyword">and</span> so on
                 lex(current + <span class="hljs-number">1</span>, [{<span class="hljs-built_in">char</span>, :oparen} | tokenstream], len, input_str)
@@ -191,35 +212,38 @@ Let&#39;s put this in real Elixir code. Inside our <code>cond</code> block, it s
                     # this is what should happen <span class="hljs-keyword">if</span> an unknown character is found.
                     # <span class="hljs-type">Here</span>, it's being ignored. <span class="hljs-type">But</span> you can <span class="hljs-keyword">raise</span> an error, <span class="hljs-keyword">if</span> you wish.
                 lex(current + <span class="hljs-number">1</span>, tokenstream, len, input_str)
-</code></pre><pre><code>If you give your lexer a <span class="hljs-keyword">try</span> now, which you can do <span class="hljs-keyword">by</span> printing `Lexer.lex`'s output <span class="hljs-keyword">with</span> `IO.inspect`, <span class="hljs-keyword">it</span> should be able\
-<span class="hljs-keyword">to</span> scan any <span class="hljs-keyword">of</span> these <span class="hljs-built_in">characters</span>, <span class="hljs-keyword">but</span> ignore everything <span class="hljs-keyword">else</span>.
-<span class="hljs-comment">### Handling multiple-character tokens</span>
-Remember <span class="hljs-keyword">the</span> helper functions you defined a bit ago? Here's <span class="hljs-keyword">where</span> they're going <span class="hljs-keyword">to</span> come <span class="hljs-keyword">in</span> useful. The <span class="hljs-keyword">first</span> step <span class="hljs-keyword">to</span> handling multi-\
-<span class="hljs-built_in">character</span> tokens <span class="hljs-keyword">is</span> <span class="hljs-keyword">to</span> define <span class="hljs-keyword">some</span> functions <span class="hljs-keyword">to</span> do <span class="hljs-keyword">that</span> <span class="hljs-keyword">for</span> you. This <span class="hljs-keyword">is</span> advantegous <span class="hljs-keyword">in</span> <span class="hljs-keyword">that</span> <span class="hljs-keyword">it</span> increases your code's maintability\
-significantly <span class="hljs-keyword">in</span> comparison <span class="hljs-keyword">to</span> just doing operations. And <span class="hljs-keyword">it</span>'s a lot simpler, too.\
-The main idea <span class="hljs-keyword">behind</span> handling tokens &gt; <span class="hljs-number">1</span> <span class="hljs-built_in">character</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">to</span> go <span class="hljs-keyword">over</span> each <span class="hljs-built_in">character</span>, add <span class="hljs-keyword">it</span> <span class="hljs-keyword">to</span> a temporary <span class="hljs-built_in">string</span> variable\
-<span class="hljs-keyword">until</span> calling <span class="hljs-keyword">the</span> relevant helper function <span class="hljs-keyword">with</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">character</span> argument doesn't <span class="hljs-literal">return</span> <span class="hljs-literal">true</span>, <span class="hljs-keyword">or</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">string</span> <span class="hljs-keyword">is</span> exhausted.\
-Then, <span class="hljs-keyword">that</span> temporary variable <span class="hljs-keyword">is</span> passed <span class="hljs-keyword">into</span> <span class="hljs-keyword">the</span> token stream <span class="hljs-keyword">with</span> a tag. This <span class="hljs-keyword">is</span> a lot easier done than said (<span class="hljs-keyword">not</span> a typo)\
-<span class="hljs-keyword">but</span> <span class="hljs-keyword">that</span> was <span class="hljs-keyword">my</span> best explanation. Let's <span class="hljs-keyword">start with</span> lexing integers.\
-Define <span class="hljs-keyword">the</span> following function nested <span class="hljs-keyword">into</span> `Lexer`.\
-```elixir
-    def handlenum(cursor, temp, input_strr) do
-        <span class="hljs-comment"># `cursor' is the same as `current', but to make sure they're distinguished, I use `cursor'</span>
-        <span class="hljs-comment"># `temp' is a temporary variable that begins as an empty string.</span>
-        <span class="hljs-built_in">character</span> = String.<span class="hljs-keyword">at</span>(input_strr, cursor)
-        <span class="hljs-keyword">if</span> numeric(<span class="hljs-built_in">character</span>) do
-            handlenum(cursor + <span class="hljs-number">1</span>, temp &lt;&gt; <span class="hljs-built_in">character</span>, input_strr)
-            <span class="hljs-comment"># if the character in this recursion is numeric, then go back up</span>
-            <span class="hljs-comment"># but go to the next character and add to the temporary variable</span>
-        <span class="hljs-keyword">else</span>
-            {temp, cursor}
-            <span class="hljs-comment"># return a tuple of the token and the new cursor.</span>
-        <span class="hljs-keyword">end</span>
-    <span class="hljs-keyword">end</span>
-</code></pre><p>Closely inspect this, and once you get it, write the rest:</p>
+</code></pre>
+<pre>
+    If you give your lexer a try now, which you can do by printing `Lexer.lex`'s output with `IO.inspect`, it should be able\
+to scan any of these characters, but ignore everything else.
+<h5> Handling multiple-character tokens </h5>
+Remember the helper functions you defined a bit ago? Here's where they're going to come in useful. The first step to handling multi-\
+character tokens is to define some functions to do that for you. This is advantegous in that it increases your code's maintability\
+significantly in comparison to just doing operations. And it's a lot simpler, too.\
+The main idea behind handling tokens > 1 character is to go over each character, add it to a temporary string variable\
+until calling the relevant helper function with the character argument doesn't return true, or the string is exhausted.\
+Then, that temporary variable is passed into the token stream with a tag. This is a lot easier done than said (not a typo)\
+but that was my best explanation. Let's start with lexing integers.\
+Define the following function nested into `Lexer`.\
+<pre><code class="lang-elixir">
+def handlenum(cursor, temp, input_strr) do
+    # `cursor' is the same as `current', but to make sure they're distinguished, I use `cursor'
+    # `temp' is a temporary variable that begins as an empty string.
+    character = String.at(input_strr, cursor)
+    if numeric(character) do
+        handlenum(cursor + 1, temp <> character, input_strr)
+        # if the character in this recursion is numeric, then go back up
+        # but go to the next character and add to the temporary variable
+    else
+        {temp, cursor}
+        # return a tuple of the token and the new cursor.
+    end
+end
+</code></pre>
+<p>Closely inspect this, and once you get it, write the rest:</p>
 <pre><code class="lang-elixir">def handlestring(cursor, temp, input_strr) <span class="hljs-keyword">do</span>
         <span class="hljs-built_in">character</span> = String.at(input_strr, <span class="hljs-keyword">cursor</span>)
-        <span class="hljs-keyword">if</span> <span class="hljs-built_in">character</span> != <span class="hljs-string">"\""</span> <span class="hljs-keyword">do</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">character</span> != <span class="hljs-string">" ""</span> <span class="hljs-keyword">do</span>
             handlestring(<span class="hljs-keyword">cursor</span> + <span class="hljs-number">1</span>, temp &lt;&gt; <span class="hljs-built_in">character</span>, input_strr)
         <span class="hljs-keyword">else</span>
             {temp, <span class="hljs-keyword">cursor</span>}
@@ -235,16 +259,18 @@ Define <span class="hljs-keyword">the</span> following function nested <span cla
         <span class="hljs-keyword">end</span>
     <span class="hljs-keyword">end</span>
 </code></pre>
-<p>What you will notice, is that the process is quite simple. Each one of these is largely the same as the others, just with\
-different conditions. In fact, these functions could&#39;ve been generated with just one function.\
-But for the sake of simplicity and performance, this will be sufficient. 
-It&#39;s important to note, <strong>if you don&#39;t yet understand, don&#39;t go to the next part yet.</strong>\
-It&#39;s quite normal and as to be expected that you don&#39;t fully understand lexing the first time. So, don&#39;t worry and keep trying.\</p>
+<p>What you will notice, is that the process is quite simple. Each one of these is largely the same as the others, just with 
+    different conditions. In fact, these functions could&#39;ve been generated with just one function. 
+    But for the sake of simplicity and performance, this will be sufficient. 
+    It&#39;s important to note, <strong>if you don&#39;t yet understand, don&#39;t go to the next part yet.</strong> 
+    It&#39;s quite normal and as to be expected that you don&#39;t fully understand lexing the first time. So, don&#39;t worry and keep trying. 
+</p>
 <h3 id="implementing-the-handler-functions">Implementing the handler functions</h3>
-<p>You should now be able to shove these handler functions that depend on the helper functions into your <code>cond</code> block in <code>Lexer.lex</code>.\
-Give that a shot and try running your program. It should work if you filled everything in correctly. You should&#39;ve added something\
-like the following in your <code>cond</code> block.</p>
-<pre><code class="lang-elixir">                char == <span class="hljs-string">"\""</span><span class="hljs-function"> -&gt;</span>
+<p>You should now be able to shove these handler functions that depend on the helper functions into your <code>cond</code> block in <code>Lexer.lex</code>. 
+    Give that a shot and try running your program. It should work if you filled everything in correctly. You should&#39;ve added something 
+    like the following in your <code>cond</code> block.
+</p>
+<pre><code class="lang-elixir">                char == <span class="hljs-string">" ""</span><span class="hljs-function"> -&gt;</span>
                     {token, cursor} = handlestring(current + <span class="hljs-number">1</span>, <span class="hljs-string">""</span>, input_str)
                     <span class="hljs-comment"># Increments to manage the quotes. We don't want them.</span>
                     lex(cursor + <span class="hljs-number">1</span>, [{token, :str} | tokenstream], len, input_str)
@@ -260,7 +286,8 @@ like the following in your <code>cond</code> block.</p>
                     lex(cursor, [{token, :identifier} | tokenstream], len, input_str)
 </code></pre>
 <p>Make sure to add this above the <code>true -&gt;</code> segment.
-If we give <code>lex</code> our program, that was intially <code>number += sqrt(16)</code>, the output would be:</p>
+    If we give <code>lex</code> our program, that was intially <code>number += sqrt(16)</code>, the output would be:
+</p>
 <pre><code class="lang-elixir">[
     {<span class="hljs-string">"number"</span>, <span class="hljs-symbol">:identifier</span>},
     {<span class="hljs-string">"+"</span>, <span class="hljs-symbol">:arithmetic</span>},
@@ -270,14 +297,16 @@ If we give <code>lex</code> our program, that was intially <code>number += sqrt(
     {<span class="hljs-string">")"</span>, <span class="hljs-symbol">:cparen</span>},
 ]
 </code></pre>
-<p>This isn&#39;t exactly what we want. It ignored <code>=</code> and added an arithmetic out of nowhere. <code>+=</code> should&#39;ve been <code>{&quot;+=&quot;, :assignment}</code>.\
-Fortunately, the solution is easy. It will be explained in the next section.</p>
+<p>This isn&#39;t exactly what we want. It ignored <code>=</code> and added an arithmetic out of nowhere. <code>+=</code> should&#39;ve been <code>{&quot;+=&quot;, :assignment}</code>. 
+    Fortunately, the solution is easy. It will be explained in the next section.
+</p>
 <h3 id="conditional-multi-character-tokens">Conditional multi-character tokens</h3>
-<p>Sometimes, you need to lex something that could be one thing or the other, or both. For example, <code>+=</code> should be an <code>:assignment</code>\
-rather than <code>:arithmetic</code>, <code>:assignment</code>. While <code>+ =</code> should be <code>:arithmetic</code>, <code>:assignment</code>. The solution to this is by something\
-called &quot;peeking.&quot; Peeking is exactly what it sounds like: you look at the next token without actually advancing to the next character.\
-Knowing that, the idea for scanning <code>+=</code> correctly is simple: when you find a <code>+</code>, peek for an <code>=</code>. If there is, advance twice and
-add the token with the tag. Otherwise, add the <code>+</code> alone. So, add this to your <code>cond</code> block.</p>
+<p>Sometimes, you need to lex something that could be one thing or the other, or both. For example, <code>+=</code> should be an <code>:assignment</code> 
+    rather than <code>:arithmetic</code>, <code>:assignment</code>. While <code>+ =</code> should be <code>:arithmetic</code>, <code>:assignment</code>. The solution to this is by something 
+    called &quot;peeking.&quot; Peeking is exactly what it sounds like: you look at the next token without actually advancing to the next character. 
+    Knowing that, the idea for scanning <code>+=</code> correctly is simple: when you find a <code>+</code>, peek for an <code>=</code>. If there is, advance twice and
+    add the token with the tag. Otherwise, add the <code>+</code> alone. So, add this to your <code>cond</code> block.
+</p>
 <pre><code class="lang-elixir">                arithmetic(<span class="hljs-keyword">char</span>) -&gt;
                     unless <span class="hljs-keyword">String</span>.at(input_str, current + <span class="hljs-number">1</span>) == <span class="hljs-string">"="</span> <span class="hljs-built_in">do</span>
                         lex(current + <span class="hljs-number">1</span>, [{<span class="hljs-keyword">char</span>, :arithmetic} | tokenstream], len, input_str)
@@ -285,12 +314,15 @@ add the token with the tag. Otherwise, add the <code>+</code> alone. So, add thi
                         lex(current + <span class="hljs-number">2</span>, [{<span class="hljs-keyword">char</span> &lt;&gt; <span class="hljs-string">"="</span>, :assignment} | tokenstream], len, input_str)
                     <span class="hljs-built_in">end</span>
 </code></pre>
-<p>But about the <code>=</code>? Well, do the same thing if you&#39;re going to have an <code>==</code> which should be a <code>:comparison</code>. Or, do the same thing as\
-you did in the start with single-character tokens suh as <code>:oparen</code>.</p>
+<p>But about the <code>=</code>? Well, do the same thing if you&#39;re going to have an <code>==</code> which should be a <code>:comparison</code>. Or, do the same thing as 
+    you did in the start with single-character tokens suh as <code>:oparen</code>.
+</p>
 <h3 id="almost-done">Almost done</h3>
-<p>After that&#39;s been done, you&#39;re almost done with a basic lexer that you can build on. All you have to do now is go to the <code>else</code> within\
-<code>Lexer.lex</code>&#39;s <code>unless</code> and replace <code>tokenstream</code> with <code>Enum.reverse(tokenstream)</code>. And that&#39;s it.\ But be sure to read the rest.</p>
+<p>After that&#39;s been done, you&#39;re almost done with a basic lexer that you can build on. All you have to do now is go to the <code>else</code> within 
+    <code>Lexer.lex</code>&#39;s <code>unless</code> and replace <code>tokenstream</code> with <code>Enum.reverse(tokenstream)</code>. And that&#39;s it.  But be sure to read the rest.
+</p>
 <h1 id="notices">Notices</h1>
 <p>This is an imperfect lexer and has been slightly simplified. Rather than &quot;consuming&quot; the input string, here, we&#39;re actually
-just indexing it. This is inefficient but it should be sufficient for a lot of cases. Click <a href="https://gist.github.com/VideoCarp/36bca88c6ef61f0a0d993d70ef6df760">here</a> for the finished lexer.
-If this helped you or you&#39;d like to give some feedback, please contribute or post a comment.</p>
+    just indexing it. This is inefficient but it should be sufficient for a lot of cases. Click <a href="https://gist.github.com/VideoCarp/36bca88c6ef61f0a0d993d70ef6df760">here</a> for the finished lexer.
+    If this helped you or you&#39;d like to give some feedback, please contribute or post a comment.
+</p>
