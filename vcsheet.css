@@ -57,9 +57,7 @@ code {
   border-style: inset;
 }
 
-code::after {
- content: "Is the code wrong? Let me know!";
-}
+
 
 .imgshad {
   border-style: outset;
